@@ -35,7 +35,7 @@ class App extends React.Component {
   }
 
   fetchData = async () => {
-    const res = await get('/resource.json');
+    const res = await get('/eth123.org/resource.json');
     if (res && (res || []).length) {
       try {
         const tagList = this.getTagList(res);
