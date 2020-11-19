@@ -1,0 +1,22 @@
+.cardItem:hover {
+  background-color: #f8f8f8;
+}
+
+.tagLink {
+  display: block;
+  position: relative;
+}
+
+.tagLink:hover {
+  color: #ff7828;
+}
+
+.tagLink::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  margin-top: -6px;
+  height: 12px;
+  width: 4px;
+  background-color: #ff7828;
+}
