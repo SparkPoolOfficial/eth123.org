@@ -35,7 +35,7 @@ class App extends React.Component {
   }
 
   fetchData = async () => {
-    const res = await get('http://sparkpool-expo.oss-cn-shanghai.aliyuncs.com/SparkPoolOfficial/eth123.org/main/resource.json');
+    const res = await get('/resource.json');
     if (res && (res || []).length) {
       try {
         const tagList = this.getTagList(res);
