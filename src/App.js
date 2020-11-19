@@ -8,6 +8,7 @@ import {
   Typography,
   Grid,
   Link,
+  Avatar,
   Button,
 } from '@material-ui/core';
 import {
@@ -35,7 +36,8 @@ class App extends React.Component {
   }
 
   fetchData = async () => {
-    const res = await get('/eth123.org/resource.json');
+    // const res = await get('/resource.json');
+    const res = await get('https://expo-res.sparkpool.com/SparkPoolOfficial/eth123.org/main/resource.json');
     if (res && (res || []).length) {
       try {
         const tagList = this.getTagList(res);
@@ -78,14 +80,19 @@ class App extends React.Component {
                 display="flex"
                 flexDirection="row"
                 p={1}
-                // bgcolor="grey.500"
                 borderRadius={8}>
                 <Box mr={1}>
-                  <img src={item.logo} alt="" height={30} />
+                  <Avatar>{item.name.slice(0, 1)}</Avatar>
                 </Box>
                 <Box>
-                  <Typography>{item.name}</Typography>
-                  <Typography>{item.desc}</Typography>
+                  <Box mb={1}>
+                    <Typography variant="body1" style={{ fontWeight: 500, color: '#333'}}>
+                      {item.name}
+                    </Typography>
+                  </Box>
+                  <Typography variant="caption" style={{ color: '#999', wordBreak: 'break-all' }}>
+                    {item.desc || (item.website || '').replace(/htt(p|ps):\/\//, '')}
+                  </Typography>
                 </Box>
               </Box>
             </Link>
@@ -104,29 +111,32 @@ class App extends React.Component {
       <ThemeProvider theme={theme}>
         <CssBaseline />
         <Container>
-          <Box mt={3} display="flex" flexDirection="column" alignItems="flex-end">
-            <Select value="zh">
+          <Box mt={2} display="flex" flexDirection="column" alignItems="flex-end">
+            {/* <Select value="zh">
               <MenuItem value="zh">简体中文</MenuItem>
               <MenuItem value="en">English</MenuItem>
-            </Select>
+            </Select> */}
+            <Button>简体中文</Button>
           </Box>
-          <Box m={2} display="flex" flexDirection="column" alignItems="center">
-            <Typography variant="h3">
-              ETH123.org
-            </Typography>
+          <Box mb={4} display="flex" flexDirection="column" alignItems="center">
+            <Box mb={1}>
+              <Typography variant="h4">
+                ETH123.org
+              </Typography>
+            </Box>
             <Typography>
               以太坊生态项目导航
             </Typography>
           </Box>
           <Box display="flex" flexDirection="row">
-            <Box mr={2}>
+            <Box mr={2} px={1} className="tagNav" id="tagNav">
               {
-                (tagList || []).map((tag) => (
+                (tagList || []).map((tag, index) => (
                   <Link
                     color="textPrimary"
                     href={`#${tag}`}
                     key={tag}
-                    className="tagLink"
+                    className={ index === 1 ? "tagLink tagLink_active" : 'tagLink'}
                     underline="none"
                   >
                     <Box py={1} px={2}>{tag}</Box>

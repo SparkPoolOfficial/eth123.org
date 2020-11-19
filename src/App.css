@@ -2,16 +2,24 @@
   background-color: #f8f8f8;
 }
 
+.tagNav {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+}
+
 .tagLink {
   display: block;
   position: relative;
+  padding-left: 8px;
 }
 
 .tagLink:hover {
   color: #ff7828;
+  background-color: rgba(255, 120, 40, .1);
 }
 
-.tagLink::before {
+.tagLink_active::before {
   content: '';
   position: absolute;
   top: 50%;
@@ -19,4 +27,12 @@
   height: 12px;
   width: 4px;
   background-color: #ff7828;
+}
+
+.item_desc {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 20px;
+  color: #999;
+  word-break: break-all;
 }
