@@ -4,13 +4,13 @@
       "desc":"description",
       "website":"https://ethereum.org/",
       "logo":"https://ethereum.org/static/93b652d1513cb2813a94d0dce5eb0b20/0ee04/eth-home-icon.png",
-      "tag":"hot,test"
+      "tags":"hot,test"
    },
    {
       "name":"ETH2",
       "desc":"description",
       "website":"https://ethereum.org/",
       "logo":"https://ethereum.org/static/93b652d1513cb2813a94d0dce5eb0b20/0ee04/eth-home-icon.png",
-      "tag":"hot,defi"
+      "tags":"hot,defi"
    }
 ]
