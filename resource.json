@@ -77,7 +77,7 @@
 	"desc_en": "",
 	"website": "https://etherscan.io/",
 	"tag": "浏览器,热门推荐",
-	"tag_en": "Exlporer,Hot",
+	"tag_en": "Explorer,Hot",
 	"logo": "https://sparkpool-expo.oss-cn-shanghai.aliyuncs.com/imgs/ethscan.png"
 }, {
 	"name": "Ethernode",
@@ -86,7 +86,7 @@
 	"desc_en": "",
 	"website": "http://www.ethernodes.org/",
 	"tag": "浏览器",
-	"tag_en": "Exlporer",
+	"tag_en": "Explorer",
 	"logo": "https://sparkpool-expo.oss-cn-shanghai.aliyuncs.com/imgs/ethnode.jpg"
 }, {
 	"name": "Ethplorer",
@@ -95,7 +95,7 @@
 	"desc_en": "",
 	"website": "https://ethplorer.io/",
 	"tag": "浏览器",
-	"tag_en": "Exlporer",
+	"tag_en": "Explorer",
 	"logo": ""
 }, {
 	"name": "Bloxy",
@@ -104,7 +104,7 @@
 	"desc_en": "",
 	"website": "https://bloxy.info/",
 	"tag": "浏览器",
-	"tag_en": "Exlporer",
+	"tag_en": "Explorer",
 	"logo": "https://sparkpool-expo.oss-cn-shanghai.aliyuncs.com/imgs/bloxy-ea0bc51fdfccc398df3217b8fd4c58e6380fcbd4f2bdd0dd2ae164bd1b902ae0.svg"
 }, {
 	"name": "GasNow",
@@ -212,7 +212,7 @@
 	"desc_en": "",
 	"website": "https://beaconcha.in/",
 	"tag": "Eth2 资源,浏览器",
-	"tag_en": "Eth2 Resources,Exlporer",
+	"tag_en": "Eth2 Resources,Explorer",
 	"logo": ""
 }, {
 	"name": "Beaconscan",
@@ -221,7 +221,7 @@
 	"desc_en": "",
 	"website": "https://beaconscan.com/",
 	"tag": "Eth2 资源,浏览器",
-	"tag_en": "Eth2 Resources,Exlporer",
+	"tag_en": "Eth2 Resources,Explorer",
 	"logo": ""
 }, {
 	"name": "Blockaction",
@@ -230,7 +230,7 @@
 	"desc_en": "",
 	"website": "https://blockaction.io/",
 	"tag": "Eth2 资源,浏览器",
-	"tag_en": "Eth2 Resources,Exlporer",
+	"tag_en": "Eth2 Resources,Explorer",
 	"logo": ""
 }, {
 	"name": "Eth2stats",
@@ -239,7 +239,7 @@
 	"desc_en": "",
 	"website": "https://eth2stats.io/",
 	"tag": "Eth2 资源,浏览器",
-	"tag_en": "Eth2 Resources,Exlporer",
+	"tag_en": "Eth2 Resources,Explorer",
 	"logo": ""
 }, {
 	"name": "Eth2 Ethernodes",
@@ -248,7 +248,7 @@
 	"desc_en": "",
 	"website": "https://eth2.ethernodes.org/",
 	"tag": "Eth2 资源,浏览器",
-	"tag_en": "Eth2 Resources,Exlporer",
+	"tag_en": "Eth2 Resources,Explorer",
 	"logo": ""
 }, {
 	"name": "Eth2 tooling",
