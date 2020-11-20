@@ -6,7 +6,7 @@
 		"website": "https://ethereum.org/",
 		"tag": "热门推荐",
 		"tag_en": "Home",
-		"logo": ""
+		"logo": "https://sparkpool-expo.oss-cn-shanghai.aliyuncs.com/imgs/eth-home-icon.png"
 	},
 	{
 		"name": "以太坊官方博客",
@@ -14,9 +14,9 @@
 		"desc": "",
 		"desc_en": "",
 		"website": "https://blog.ethereum.org/",
-		"tag": "热门推荐",
+		"tag": "资讯/博客",
 		"tag_en": "Home",
-		"logo": ""
+		"logo": "https://sparkpool-expo.oss-cn-shanghai.aliyuncs.com/imgs/ethblog.png"
 	},
 	{
 		"name": "以太坊 Reddit",
@@ -39,8 +39,8 @@
 		"logo": ""
 	},
 	{
-		"name": "",
-		"name_en": "Ethereum Magicians",
+		"name": "Ethereum Magicians",
+		"name_en": "",
 		"desc": "",
 		"desc_en": "",
 		"website": "https://ethereum-magicians.org/",
@@ -86,7 +86,7 @@
 		"website": "https://etherscan.io/",
 		"tag": "浏览器,热门推荐",
 		"tag_en": "Exlporer,Home",
-		"logo": ""
+		"logo": "https://sparkpool-expo.oss-cn-shanghai.aliyuncs.com/imgs/ethscan.png"
 	},
 	{
 		"name": "Ethernode",
@@ -126,7 +126,7 @@
 		"website": "https://www.gasnow.org/",
 		"tag": "工具,热门推荐",
 		"tag_en": "Tool,Home",
-		"logo": ""
+		"logo": "https://sparkpool-expo.oss-cn-shanghai.aliyuncs.com/imgs/ethblog.png"
 	},
 	{
 		"name": "Gas Station",
@@ -189,7 +189,7 @@
 		"logo": ""
 	},
 	{
-		"name": " 设计原理",
+		"name": "2.0 设计原理",
 		"name_en": "2.0 Design Rationale",
 		"desc": "",
 		"desc_en": "",
@@ -204,9 +204,9 @@
 		"desc": "",
 		"desc_en": "",
 		"website": "https://launchpad.ethereum.org/overview",
-		"tag": "Eth2 资源,热门推荐",
-		"tag_en": "Eth2 Resources,Home",
-		"logo": ""
+		"tag": "Eth2 资源",
+		"tag_en": "Eth2 Resources",
+		"logo": "https://sparkpool-expo.oss-cn-shanghai.aliyuncs.com/imgs/ethblog.png"
 	},
 	{
 		"name": "Eth2 双周报",
@@ -649,7 +649,7 @@
 		"logo": "https://sparkpool-expo.oss-cn-shanghai.aliyuncs.com/imgs/kyber-logo-1588832950924.jpg"
 	},
 	{
-		"name": "0x",
+		"name": 0x,
 		"name_en": "",
 		"desc": "",
 		"desc_en": "",
@@ -1717,6 +1717,6 @@
 		"tag": "资讯/博客",
 		"tag_en": "Newsletter/Blog",
 		"logo": ""
-	}
+	},
 
 ]
