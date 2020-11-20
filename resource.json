@@ -5,7 +5,7 @@
 		"desc_en": "",
 		"website": "https://ethereum.org/",
 		"tag": "热门推荐",
-		"tag_en": "Home",
+		"tag_en": "Hot",
 		"logo": "https://sparkpool-expo.oss-cn-shanghai.aliyuncs.com/imgs/eth-home-icon.png"
 	},
 	{
@@ -15,7 +15,7 @@
 		"desc_en": "",
 		"website": "https://blog.ethereum.org/",
 		"tag": "资讯/博客",
-		"tag_en": "Home",
+		"tag_en": "Newsletter/Blog",
 		"logo": "https://sparkpool-expo.oss-cn-shanghai.aliyuncs.com/imgs/ethblog.png"
 	},
 	{
@@ -85,7 +85,7 @@
 		"desc_en": "",
 		"website": "https://etherscan.io/",
 		"tag": "浏览器,热门推荐",
-		"tag_en": "Exlporer,Home",
+		"tag_en": "Exlporer,Hot",
 		"logo": "https://sparkpool-expo.oss-cn-shanghai.aliyuncs.com/imgs/ethscan.png"
 	},
 	{
@@ -125,7 +125,7 @@
 		"desc_en": "",
 		"website": "https://www.gasnow.org/",
 		"tag": "工具,热门推荐",
-		"tag_en": "Tool,Home",
+		"tag_en": "Tool,Hot",
 		"logo": "https://sparkpool-expo.oss-cn-shanghai.aliyuncs.com/imgs/ethblog.png"
 	},
 	{
@@ -555,7 +555,7 @@
 		"desc_en": "",
 		"website": "https://makerdao.com/",
 		"tag": "DeFi,热门推荐",
-		"tag_en": "DeFi,Home",
+		"tag_en": "DeFi,Hot",
 		"logo": "https://sparkpool-expo.oss-cn-shanghai.aliyuncs.com/imgs/Maker-1588230450967.jpg"
 	},
 	{
@@ -575,7 +575,7 @@
 		"desc_en": "",
 		"website": "https://app.uniswap.org/",
 		"tag": "DeFi,热门推荐",
-		"tag_en": "DeFi,Home",
+		"tag_en": "DeFi,Hot",
 		"logo": "https://sparkpool-expo.oss-cn-shanghai.aliyuncs.com/imgs/uniswap.org_logo_400x400-1586866796733.jpg"
 	},
 	{
@@ -585,7 +585,7 @@
 		"desc_en": "",
 		"website": "https://compound.finance/",
 		"tag": "DeFi,热门推荐",
-		"tag_en": "DeFi,Home",
+		"tag_en": "DeFi,Hot",
 		"logo": "https://sparkpool-expo.oss-cn-shanghai.aliyuncs.com/imgs/compound.finance_logo_400x400-1588140853333.png"
 	},
 	{
@@ -1155,7 +1155,7 @@
 		"desc_en": "",
 		"website": "https://metamask.io/",
 		"tag": "钱包,热门推荐",
-		"tag_en": "Wallet,Home",
+		"tag_en": "Wallet,Hot",
 		"logo": ""
 	},
 	{
@@ -1165,7 +1165,7 @@
 		"desc_en": "",
 		"website": "https://token.im/",
 		"tag": "钱包,热门推荐",
-		"tag_en": "Wallet,Home",
+		"tag_en": "Wallet,Hot",
 		"logo": ""
 	},
 	{
