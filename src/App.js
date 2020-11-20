@@ -30,6 +30,19 @@ const theme = createMuiTheme({
   }
 });
 
+const translation = {
+  zh: {
+    subTitle: '以太坊生态项目导航',
+    more: '一起发现更多新产品',
+    submit: '提交',
+  },
+  en: {
+    subTitle: 'A Portal to Ethereum Ecosystem',
+    more: 'Discover more new products',
+    submit: 'Submit',
+  }
+}
+
 class App extends React.Component {
 
   state = {
@@ -38,6 +51,8 @@ class App extends React.Component {
     activityKey: '热门推荐',
     tagList: [],
     navList: [],
+
+    language: 'zh',
   }
 
   componentDidMount() {
@@ -89,9 +104,19 @@ class App extends React.Component {
     }
   }
 
+  translate = (key) => {
+    const { language } = this.state;
+    return translation[language][key];
+  }
+
   renderDesc = (item) => {
-    const { desc, website } = item;
-    if (desc) return desc;
+    const { language } = this.state;
+    const { desc, desc_en, website } = item;
+    if (language === 'zh' && desc) {
+      return desc;
+    } else if (language === 'en' && desc_en) {
+      return desc_en;
+    }
     let url = (website || '').replace(/htt(p|ps):\/\//, '');
     if (url.slice('-1') === '/') {
       url = url.slice(0, url.length - 1);
@@ -141,41 +166,45 @@ class App extends React.Component {
   }
 
   renderNavContentCard = () => {
-    const { tagList } = this.state;
+    const { tagList, language } = this.state;
     // return (tagList || []).filter((item) => item.tag_en !== 'Home').map(({ tag, tag_en}) => (
-    return (tagList || []).map(({ tag, tag_en}) => (
-      <Box
-        bgcolor="white"
-        borderRadius={16}
-        mb={2}
-        key={tag}
-        id={tag}
-        px={3}
-      >
+    return (tagList || []).map((item) => {
+      let tagName = language === 'zh' ? item.tag : item.tag_en;
+      return (
         <Box
-          py={2}
-          border={1}
-          borderTop={0}
-          borderRight={0}
-          borderLeft={0}
-          borderColor="grey.100"
+          bgcolor="white"
+          borderRadius={16}
+          mb={2}
+          key={tagName}
+          id={tagName}
+          px={3}
         >
-          <Typography>{tag}</Typography>
+          <Box
+            py={2}
+            border={1}
+            borderTop={0}
+            borderRight={0}
+            borderLeft={0}
+            borderColor="grey.100"
+          >
+            <Typography>{tagName}</Typography>
+          </Box>
+          <Box py={3}>
+            <Grid container spacing={1}>
+              { this.renderNavCard(tagName) }
+            </Grid>
+          </Box>
         </Box>
-        <Box py={3}>
-          <Grid container spacing={1}>
-            { this.renderNavCard(tag) }
-          </Grid>
-        </Box>
-      </Box>
-    ))
+      )
+    })
   }
 
   renderNavCard = (tag) => {
-    const { navList } = this.state;
+    const { navList, language } = this.state;
     let node = [];
-    navList.forEach((item, index) => {
-      if (item.tag.indexOf(tag) > -1) {
+    (navList || []).forEach((item, index) => {
+      let tagName = language === 'zh' ? item.tag : item.tag_en;
+      if (tagName.indexOf(tag) > -1) {
         node.push(
           <Grid item xs={6} sm={4} md={3} key={index}>
             <Link
@@ -191,21 +220,23 @@ class App extends React.Component {
                 <Box mr={1}>
                   {
                     item.logo ? (
-                      <Avatar src={item.logo} />
+                      <Avatar style={{ height: 30, width: 30 }} src={item.logo} />
                     ) : (
-                      <Avatar>{item.name.slice(0, 1)}</Avatar>
+                      <Avatar style={{ height: 30, width: 30 }}>{(language === 'zh' ? item.name : item.name_en).slice(0, 1)}</Avatar>
                     )
                   }
                 </Box>
                 <Box>
-                  <Box mb={1}>
+                  <Box display="flex" flexDirection="row" alignItems="center" style={{ height: 30 }} mb={1}>
                     <Typography variant="body1" className="cardItem_title" style={{ fontWeight: 500 }}>
-                      {item.name}
+                      {language === 'zh' ? item.name : item.name_en}
                     </Typography>
                   </Box>
-                  <Typography variant="caption" style={{ color: '#999', wordBreak: 'break-all' }}>
-                    {this.renderDesc(item)}
-                  </Typography>
+                  <Box style={{ lineHeight: '20px' }}>
+                    <Typography variant="caption" style={{ color: '#999', wordBreak: 'break-all' }}>
+                      {this.renderDesc(item)}
+                    </Typography>
+                  </Box>
                 </Box>
               </Box>
             </Link>
@@ -218,14 +249,31 @@ class App extends React.Component {
 
   render() {
 
-    const { tagList, sticky, footerVisible, activityKey } = this.state;
+    const {
+      tagList,
+      sticky,
+      footerVisible,
+      activityKey,
+      language,
+    } = this.state;
+
+    const t = this.translate;
 
     return (
       <ThemeProvider theme={theme}>
         <CssBaseline />
         <Container>
           <Box mt={2} display="flex" flexDirection="column" alignItems="flex-end">
-            <Button>简体中文</Button>
+            <Button
+              onClick={() => {
+                this.setState({
+                  language: language === 'zh' ? 'en' : 'zh',
+                })
+              }}>
+              {
+                language === "zh" ? 'English' : '简体中文'
+              }
+            </Button>
           </Box>
           <Box mb={4} display="flex" flexDirection="column" alignItems="center">
             <Box mb={1}>
@@ -233,7 +281,7 @@ class App extends React.Component {
             </Box>
             <Box>
               <Typography color="textSecondary">
-                -- 以太坊生态项目导航 --
+                -- {t('subTitle')} --
               </Typography>
             </Box>
           </Box>
@@ -245,22 +293,25 @@ class App extends React.Component {
                 className={sticky ? "tagNav tagNav_fixed" : "tagNav"}
                 id="tagNav">
                 {
-                  (tagList || []).map(({ tag, tag_en }, index) => (
-                    <Link
-                      color="textPrimary"
-                      href={`#${tag}`}
-                      key={tag}
-                      className={ activityKey === tag ? "tagLink tagLink_active" : 'tagLink'}
-                      underline="none"
-                      onClick={() => {
-                        this.setState({
-                          activityKey: tag,
-                        });
-                      }}
-                      >
-                        <Box py={1} px={2}>{tag}</Box>
-                      </Link>
-                    ))
+                  (tagList || []).map(({ tag, tag_en }, index) => {
+                    let tagName = language === 'zh' ? tag : tag_en;
+                    return (
+                      <Link
+                        color="textPrimary"
+                        href={`#${tagName}`}
+                        key={tagName}
+                        className={ activityKey === tagName ? "tagLink tagLink_active" : 'tagLink'}
+                        underline="none"
+                        onClick={() => {
+                          this.setState({
+                            activityKey: tagName,
+                          });
+                        }}
+                        >
+                          <Box py={1} px={2}>{tagName}</Box>
+                        </Link>
+                      )
+                  })
                   }
                 </Box>
                 <Box flex={1}></Box>
@@ -281,7 +332,7 @@ class App extends React.Component {
               py={4}>
               <Box mb={3}>
                 <Typography variant="h5" className="footer_title">
-                  一起发现更多新产品
+                  {t('more')}
                 </Typography>
               </Box>
               <Button
@@ -292,7 +343,7 @@ class App extends React.Component {
                   window.open('https://github.com/SparkPoolOfficial/eth123.org/issues');
                 }}
                 >
-                提交
+                {t('submit')}
               </Button>
             </Box>
           ) : null

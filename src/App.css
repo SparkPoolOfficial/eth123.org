@@ -59,6 +59,7 @@
 }
 
 .cardItem_title {
+  line-height: 30px;
   color: #333;
 }
 
