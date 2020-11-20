@@ -89,43 +89,14 @@ class App extends React.Component {
     }
   }
 
-  renderNavCard = (tag) => {
-    const { navList } = this.state;
-    let node = [];
-    navList.forEach((item, index) => {
-      if (item.tag.indexOf(tag) > -1) {
-        node.push(
-          <Grid item xs={6} sm={4} md={3} key={index}>
-            <Link
-              color="textPrimary"
-              href={item.website}
-              underline='none'>
-              <Box
-                className='cardItem'
-                display="flex"
-                flexDirection="row"
-                p={1}
-                borderRadius={8}>
-                <Box mr={1}>
-                  <Avatar>{item.name.slice(0, 1)}</Avatar>
-                </Box>
-                <Box>
-                  <Box mb={1}>
-                    <Typography variant="body1" style={{ fontWeight: 500, color: '#333'}}>
-                      {item.name}
-                    </Typography>
-                  </Box>
-                  <Typography variant="caption" style={{ color: '#999', wordBreak: 'break-all' }}>
-                    {item.desc || (item.website || '').replace(/htt(p|ps):\/\//, '')}
-                  </Typography>
-                </Box>
-              </Box>
-            </Link>
-          </Grid>
-        )
-      }
-    });
-    return node;
+  renderDesc = (item) => {
+    const { desc, website } = item;
+    if (desc) return desc;
+    let url = (website || '').replace(/htt(p|ps):\/\//, '');
+    if (url.slice('-1') === '/') {
+      url = url.slice(0, url.length - 1);
+    }
+    return url;
   }
 
   renderHotCard = () => {
@@ -171,7 +142,8 @@ class App extends React.Component {
 
   renderNavContentCard = () => {
     const { tagList } = this.state;
-    return (tagList || []).filter((item) => item.tag_en !== 'Home').map(({ tag, tag_en}) => (
+    // return (tagList || []).filter((item) => item.tag_en !== 'Home').map(({ tag, tag_en}) => (
+    return (tagList || []).map(({ tag, tag_en}) => (
       <Box
         bgcolor="white"
         borderRadius={16}
@@ -197,6 +169,51 @@ class App extends React.Component {
         </Box>
       </Box>
     ))
+  }
+
+  renderNavCard = (tag) => {
+    const { navList } = this.state;
+    let node = [];
+    navList.forEach((item, index) => {
+      if (item.tag.indexOf(tag) > -1) {
+        node.push(
+          <Grid item xs={6} sm={4} md={3} key={index}>
+            <Link
+              color="textPrimary"
+              href={item.website}
+              underline='none'>
+              <Box
+                className='cardItem'
+                display="flex"
+                flexDirection="row"
+                p={1}
+                borderRadius={8}>
+                <Box mr={1}>
+                  {
+                    item.logo ? (
+                      <Avatar src={item.logo} />
+                    ) : (
+                      <Avatar>{item.name.slice(0, 1)}</Avatar>
+                    )
+                  }
+                </Box>
+                <Box>
+                  <Box mb={1}>
+                    <Typography variant="body1" className="cardItem_title" style={{ fontWeight: 500 }}>
+                      {item.name}
+                    </Typography>
+                  </Box>
+                  <Typography variant="caption" style={{ color: '#999', wordBreak: 'break-all' }}>
+                    {this.renderDesc(item)}
+                  </Typography>
+                </Box>
+              </Box>
+            </Link>
+          </Grid>
+        )
+      }
+    });
+    return node;
   }
 
   render() {
@@ -249,7 +266,7 @@ class App extends React.Component {
                 <Box flex={1}></Box>
             </Hidden>
             <Box className="tagContent">
-              {this.renderHotCard()}
+              {/* {this.renderHotCard()} */}
               {this.renderNavContentCard()}
             </Box>
           </Box>
