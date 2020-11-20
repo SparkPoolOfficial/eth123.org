@@ -222,18 +222,30 @@ class App extends React.Component {
                     item.logo ? (
                       <Avatar style={{ height: 30, width: 30 }} src={item.logo} />
                     ) : (
-                      <Avatar style={{ height: 30, width: 30 }}>{(language === 'zh' ? item.name : item.name_en).slice(0, 1)}</Avatar>
+                      <Avatar style={{ height: 30, width: 30 }}>
+                        {(language === 'zh' ? item.name : (item.name_en || item.name)).slice(0, 1)}
+                      </Avatar>
                     )
                   }
                 </Box>
                 <Box>
-                  <Box display="flex" flexDirection="row" alignItems="center" style={{ height: 30 }} mb={1}>
-                    <Typography variant="body1" className="cardItem_title" style={{ fontWeight: 500 }}>
-                      {language === 'zh' ? item.name : item.name_en}
+                  <Box
+                    display="flex"
+                    flexDirection="row"
+                    alignItems="center"
+                    style={{ height: 30 }}
+                    mb={1}>
+                    <Typography
+                      variant="body1"
+                      className="cardItem_title"
+                      style={{ fontWeight: 500 }}>
+                      {language === 'zh' ? item.name : (item.name_en || item.name)}
                     </Typography>
                   </Box>
                   <Box style={{ lineHeight: '20px' }}>
-                    <Typography variant="caption" style={{ color: '#999', wordBreak: 'break-all' }}>
+                    <Typography
+                      variant="caption"
+                      style={{ color: '#999', wordBreak: 'break-all' }}>
                       {this.renderDesc(item)}
                     </Typography>
                   </Box>
@@ -288,7 +300,6 @@ class App extends React.Component {
           <Box display="flex" flexDirection="row">
             <Hidden mdDown>
               <Box
-                mr={2}
                 px={1}
                 className={sticky ? "tagNav tagNav_fixed" : "tagNav"}
                 id="tagNav">

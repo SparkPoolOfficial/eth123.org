@@ -9,6 +9,7 @@
 
 .tagContent {
   width: 1042px;
+  min-width: 1042px;
 }
 
 .tagLink {
