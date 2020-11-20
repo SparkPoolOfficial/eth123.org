@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/eth123.org/static/css/main.28b73f37.chunk.css",
-    "main.js": "/eth123.org/static/js/main.43738e60.chunk.js",
-    "main.js.map": "/eth123.org/static/js/main.43738e60.chunk.js.map",
+    "main.js": "/eth123.org/static/js/main.4b51c667.chunk.js",
+    "main.js.map": "/eth123.org/static/js/main.4b51c667.chunk.js.map",
     "runtime-main.js": "/eth123.org/static/js/runtime-main.6acdde62.js",
     "runtime-main.js.map": "/eth123.org/static/js/runtime-main.6acdde62.js.map",
     "static/js/2.7471f872.chunk.js": "/eth123.org/static/js/2.7471f872.chunk.js",
@@ -19,6 +19,6 @@
     "static/js/runtime-main.6acdde62.js",
     "static/js/2.7471f872.chunk.js",
     "static/css/main.28b73f37.chunk.css",
-    "static/js/main.43738e60.chunk.js"
+    "static/js/main.4b51c667.chunk.js"
   ]
 }
