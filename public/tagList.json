@@ -1,0 +1,70 @@
+[
+  {
+    "tag": "热门推荐",
+    "tag_en":"Home"
+  },
+  {
+    "tag": "社区",
+    "tag_en":"Community"
+  },
+  {
+    "tag": "浏览器",
+    "tag_en":"Explorer"
+  },
+  {
+    "tag": "文档",
+    "tag_en":"Documentation"
+  },
+  {
+    "tag": "Eth2 资源",
+    "tag_en":"Eth2 Resources"
+  },
+  {
+    "tag": "DeFi",
+    "tag_en":"DeFi"
+  },
+  {
+    "tag": "Layer2",
+    "tag_en":"Layer2"
+  },
+  {
+    "tag": "DAO",
+    "tag_en":"DAO"
+  },
+  {
+    "tag": "数据分析",
+    "tag_en":"Data Analysis"
+  },
+  {
+    "tag": "工具",
+    "tag_en":"Tools"
+  },
+  {
+    "tag": "钱包",
+    "tag_en":"Wallet"
+  },
+  {
+    "tag": "客户端",
+    "tag_en":"Client"
+  },
+  {
+    "tag": "预言机",
+    "tag_en":"Oracle"
+  },
+  {
+    "tag": "应用",
+    "tag_en":"dApp"
+  },
+  {
+    "tag": "开发者资源",
+    "tag_en":"Developer Resources"
+  },
+  {
+    "tag": "资讯/博客",
+    "tag_en":"Newsletter/Blog"
+  },
+  {
+    "tag": "其它",
+    "tag_en":"Others"
+  }
+]

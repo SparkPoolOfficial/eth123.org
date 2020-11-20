@@ -3,9 +3,16 @@
 }
 
 .tagNav {
-  position: -webkit-sticky;
-  position: sticky;
+  /* width: 120px; */
+}
+
+.tagNav_fixed {
+  position: fixed;
   top: 0;
+}
+
+.tagContent {
+  width: 1042px;
 }
 
 .tagLink {
@@ -29,10 +36,34 @@
   background-color: #ff7828;
 }
 
+.hotCard {
+  min-height: 92px;
+}
+
+.hotCard > img {
+  max-width: 100%;
+}
+
 .item_desc {
   font-size: 12px;
   font-weight: 400;
   line-height: 20px;
   color: #999;
   word-break: break-all;
+}
+
+.footer {
+  background-image: url('./assets/footer_bg.svg');
+  background-position: center center;
+  background-size: cover;
+}
+
+.footer_title {
+  color: #fff;
+}
+
+.submitBtn {
+  width: 160px;
+  height: 40px;
+  border-radius: 35px!important;
 }
