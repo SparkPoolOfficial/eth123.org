@@ -209,7 +209,8 @@ class App extends React.Component {
           <Grid item xs={6} sm={4} md={3} key={index}>
             <Link
               color="textPrimary"
-              href={item.website}
+              href={`${item.website}?utm_resource=eth123.org`}
+              target="_blank"
               underline='none'>
               <Box
                 className='cardItem'
