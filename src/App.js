@@ -3,9 +3,8 @@ import {
   CssBaseline,
   Container,
   Box,
-  Select,
-  MenuItem,
   Typography,
+  Hidden,
   Grid,
   Link,
   Avatar,
@@ -96,7 +95,7 @@ class App extends React.Component {
     navList.forEach((item, index) => {
       if (item.tags.indexOf(tag) > -1) {
         node.push(
-          <Grid item xs={3} key={index}>
+          <Grid item xs={6} sm={4} md={3} key={index}>
             <Link
               color="textPrimary"
               href={item.website}
@@ -135,7 +134,7 @@ class App extends React.Component {
     navList.forEach((item, index) => {
       if (item.tags.indexOf('Home') > -1) {
         node.push(
-          <Grid item xs={3} key={index}>
+          <Grid item xs={6} sm={4} md={3} key={index}>
             <Link
               color="textPrimary"
               href={item.website}
@@ -222,31 +221,33 @@ class App extends React.Component {
             </Box>
           </Box>
           <Box display="flex" flexDirection="row">
-            <Box
-              mr={2}
-              px={1}
-              className={sticky ? "tagNav tagNav_fixed" : "tagNav"}
-              id="tagNav">
-              {
-                (tagList || []).map(({ tag, tag_en }, index) => (
-                  <Link
-                    color="textPrimary"
-                    href={`#${tag}`}
-                    key={tag}
-                    className={ activityKey === tag ? "tagLink tagLink_active" : 'tagLink'}
-                    underline="none"
-                    onClick={() => {
-                      this.setState({
-                        activityKey: tag,
-                      });
-                    }}
-                  >
-                    <Box py={1} px={2}>{tag}</Box>
-                  </Link>
-                ))
-              }
-            </Box>
-            <Box flex={1}></Box>
+            <Hidden mdDown>
+              <Box
+                mr={2}
+                px={1}
+                className={sticky ? "tagNav tagNav_fixed" : "tagNav"}
+                id="tagNav">
+                {
+                  (tagList || []).map(({ tag, tag_en }, index) => (
+                    <Link
+                      color="textPrimary"
+                      href={`#${tag}`}
+                      key={tag}
+                      className={ activityKey === tag ? "tagLink tagLink_active" : 'tagLink'}
+                      underline="none"
+                      onClick={() => {
+                        this.setState({
+                          activityKey: tag,
+                        });
+                      }}
+                      >
+                        <Box py={1} px={2}>{tag}</Box>
+                      </Link>
+                    ))
+                  }
+                </Box>
+                <Box flex={1}></Box>
+            </Hidden>
             <Box className="tagContent">
               {this.renderHotCard()}
               {this.renderNavContentCard()}
