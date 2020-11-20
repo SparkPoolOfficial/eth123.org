@@ -48,7 +48,7 @@ class App extends React.Component {
   state = {
     sticky: false,
     footerVisible: false,
-    activityKey: '热门推荐',
+    activityKey: 'Hot',
     tagList: [],
     navList: [],
 
