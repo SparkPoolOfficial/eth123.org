@@ -6,7 +6,8 @@
 		"website": "https://ethereum.org/",
 		"tag": "热门推荐",
 		"tag_en": "Hot",
-		"logo": "https://sparkpool-expo.oss-cn-shanghai.aliyuncs.com/imgs/eth-home-icon.png"
+		"logo": "https://sparkpool-expo.oss-cn-shanghai.aliyuncs.com/imgs/eth-home-icon.png",
+		"logoWidthAuto": true
 	},
 	{
 		"name": "官方博客",

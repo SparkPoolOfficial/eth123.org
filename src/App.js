@@ -221,7 +221,7 @@ class App extends React.Component {
                 <Box mr={1}>
                   {
                     item.logo ? (
-                      <Avatar style={{ height: 30, width: 30 }} src={item.logo} />
+                      <Avatar style={{ height: item.logoHeightAuto ? 'auto' : 30, width: item.logoWidthAuto ? 'auto' : 30 }} src={item.logo} />
                     ) : (
                       <Avatar style={{ height: 30, width: 30 }}>
                         {(language === 'zh' ? item.name : (item.name_en || item.name)).slice(0, 1)}
@@ -328,34 +328,43 @@ class App extends React.Component {
                 <Box flex={1}></Box>
             </Hidden>
             <Box className="tagContent">
-              {/* {this.renderHotCard()} */}
               {this.renderNavContentCard()}
             </Box>
           </Box>
         </Container>
         {
           footerVisible ? (
-            <Box
-              display="flex"
-              flexDirection="column"
-              alignItems="center"
-              className="footer"
-              py={4}>
-              <Box mb={3}>
-                <Typography variant="h5" className="footer_title">
-                  {t('more')}
-                </Typography>
+            <Box>
+              <Box
+                display="flex"
+                flexDirection="column"
+                alignItems="center"
+                className="footer"
+                py={4}>
+                <Box mb={3}>
+                  <Typography variant="h5" className="footer_title">
+                    {t('more')}
+                  </Typography>
+                </Box>
+                <Button
+                  variant="contained"
+                  className="submitBtn"
+                  color="primary"
+                  onClick={() => {
+                    window.open('https://github.com/SparkPoolOfficial/eth123.org/issues');
+                  }}
+                  >
+                  {t('submit')}
+                </Button>
               </Box>
-              <Button
-                variant="contained"
-                className="submitBtn"
-                color="primary"
-                onClick={() => {
-                  window.open('https://github.com/SparkPoolOfficial/eth123.org/issues');
-                }}
-                >
-                {t('submit')}
-              </Button>
+              <Box display="flex" flexDirection="row" justifyContent="center" py={2}>
+                <Box>Sponsored By&nbsp;</Box>
+                <Box color="#ff7828">
+                  <Link href="https://www.sparkpool.com" underline="none">
+                    SparkPool
+                  </Link>
+                </Box>
+              </Box>
             </Box>
           ) : null
         }
