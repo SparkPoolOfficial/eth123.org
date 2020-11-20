@@ -128,7 +128,7 @@ class App extends React.Component {
     const { navList, tagList } = this.state;
     let node = [];
     navList.forEach((item, index) => {
-      if (item.tag_en.indexOf('Home') > -1) {
+      if (item.tag_en.indexOf('Hot') > -1) {
         node.push(
           <Grid item xs={6} sm={4} md={3} key={index}>
             <Link
@@ -176,7 +176,7 @@ class App extends React.Component {
           borderRadius={16}
           mb={2}
           key={tagName}
-          id={tagName}
+          id={item.tag_en}
           px={3}
         >
           <Box
@@ -234,8 +234,7 @@ class App extends React.Component {
                     display="flex"
                     flexDirection="row"
                     alignItems="center"
-                    style={{ height: 30 }}
-                    mb={1}>
+                    style={{ height: 30 }}>
                     <Typography
                       variant="body1"
                       className="cardItem_title"
@@ -316,7 +315,7 @@ class App extends React.Component {
                         underline="none"
                         onClick={() => {
                           this.setState({
-                            activityKey: tagName,
+                            activityKey: tag_en,
                           });
                         }}
                         >
