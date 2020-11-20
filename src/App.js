@@ -310,9 +310,9 @@ class App extends React.Component {
                     return (
                       <Link
                         color="textPrimary"
-                        href={`#${tagName}`}
+                        href={`#${tag_en}`}
                         key={tagName}
-                        className={ activityKey === tagName ? "tagLink tagLink_active" : 'tagLink'}
+                        className={ activityKey === tag_en ? "tagLink tagLink_active" : 'tagLink'}
                         underline="none"
                         onClick={() => {
                           this.setState({
