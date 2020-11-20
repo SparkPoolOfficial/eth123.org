@@ -93,7 +93,7 @@ class App extends React.Component {
     const { navList } = this.state;
     let node = [];
     navList.forEach((item, index) => {
-      if (item.tags.indexOf(tag) > -1) {
+      if (item.tag.indexOf(tag) > -1) {
         node.push(
           <Grid item xs={6} sm={4} md={3} key={index}>
             <Link
@@ -132,7 +132,7 @@ class App extends React.Component {
     const { navList, tagList } = this.state;
     let node = [];
     navList.forEach((item, index) => {
-      if (item.tags.indexOf('Home') > -1) {
+      if (item.tag_en.indexOf('Home') > -1) {
         node.push(
           <Grid item xs={6} sm={4} md={3} key={index}>
             <Link
