@@ -6,11 +6,10 @@
 		"website": "https://ethereum.org/",
 		"tag": "热门推荐",
 		"tag_en": "Hot",
-		"logo": "https://sparkpool-expo.oss-cn-shanghai.aliyuncs.com/imgs/eth-home-icon.png",
-		"logoWidthAuto": true
+		"logo": "https://sparkpool-expo.oss-cn-shanghai.aliyuncs.com/imgs/eth-home-icon.png"
 	},
 	{
-		"name": "官方博客",
+		"name": "以太坊官方博客",
 		"name_en": "Ethereum Foundation Blog",
 		"desc": "",
 		"desc_en": "",
@@ -27,7 +26,7 @@
 		"website": "http://www.reddit.com/r/ethereum",
 		"tag": "社区",
 		"tag_en": "Community",
-		"logo": ""
+		"logo": "https://sparkpool-expo.oss-cn-shanghai.aliyuncs.com/imgs/redditlogo.png"
 	},
 	{
 		"name": "以太坊研究论坛",
@@ -37,17 +36,17 @@
 		"website": "https://ethresear.ch/",
 		"tag": "社区",
 		"tag_en": "Community",
-		"logo": ""
+		"logo": "https://sparkpool-expo.oss-cn-shanghai.aliyuncs.com/imgs/ethresearch.jpg"
 	},
 	{
 		"name": "Ethereum Magicians",
-		"name_en": "",
+		"name_en": "Ethereum Magicians",
 		"desc": "",
 		"desc_en": "",
 		"website": "https://ethereum-magicians.org/",
 		"tag": "社区",
 		"tag_en": "Community",
-		"logo": ""
+		"logo": "https://sparkpool-expo.oss-cn-shanghai.aliyuncs.com/imgs/ethmagician.jpg"
 	},
 	{
 		"name": "以太坊爱好者",
@@ -57,7 +56,7 @@
 		"website": "https://ethfans.org/",
 		"tag": "社区",
 		"tag_en": "Community",
-		"logo": ""
+		"logo": "https://sparkpool-expo.oss-cn-shanghai.aliyuncs.com/imgs/ethfans.jpeg"
 	},
 	{
 		"name": "以太坊中国",
@@ -67,7 +66,7 @@
 		"website": "https://ethereum.cn/",
 		"tag": "社区",
 		"tag_en": "Community",
-		"logo": ""
+		"logo": "https://sparkpool-expo.oss-cn-shanghai.aliyuncs.com/imgs/101605869568_.pic_hd.jpg"
 	},
 	{
 		"name": "以太行星",
@@ -77,11 +76,11 @@
 		"website": "https://www.ethplanet.org/",
 		"tag": "社区",
 		"tag_en": "Community",
-		"logo": ""
+		"logo": "https://sparkpool-expo.oss-cn-shanghai.aliyuncs.com/imgs/ethplanet.jpeg"
 	},
 	{
 		"name": "Etherscan",
-		"name_en": "",
+		"name_en": "Etherscan",
 		"desc": "",
 		"desc_en": "",
 		"website": "https://etherscan.io/",
@@ -91,17 +90,17 @@
 	},
 	{
 		"name": "Ethernode",
-		"name_en": "",
+		"name_en": "Ethernode",
 		"desc": "",
 		"desc_en": "",
 		"website": "http://www.ethernodes.org/",
 		"tag": "浏览器",
 		"tag_en": "Exlporer",
-		"logo": ""
+		"logo": "https://sparkpool-expo.oss-cn-shanghai.aliyuncs.com/imgs/ethnode.jpg"
 	},
 	{
 		"name": "Ethplorer",
-		"name_en": "",
+		"name_en": "Ethplorer",
 		"desc": "",
 		"desc_en": "",
 		"website": "https://ethplorer.io/",
@@ -111,17 +110,17 @@
 	},
 	{
 		"name": "Bloxy",
-		"name_en": "",
+		"name_en": "Bloxy",
 		"desc": "",
 		"desc_en": "",
 		"website": "https://bloxy.info/",
 		"tag": "浏览器",
 		"tag_en": "Exlporer",
-		"logo": ""
+		"logo": "https://sparkpool-expo.oss-cn-shanghai.aliyuncs.com/imgs/bloxy-ea0bc51fdfccc398df3217b8fd4c58e6380fcbd4f2bdd0dd2ae164bd1b902ae0.svg"
 	},
 	{
 		"name": "GasNow",
-		"name_en": "",
+		"name_en": "GasNow",
 		"desc": "",
 		"desc_en": "",
 		"website": "https://www.gasnow.org/",
@@ -131,23 +130,23 @@
 	},
 	{
 		"name": "Gas Station",
-		"name_en": "",
+		"name_en": "Gas Station",
 		"desc": "",
 		"desc_en": "",
 		"website": "https://ethgasstation.info/",
 		"tag": "工具",
 		"tag_en": "Tool",
-		"logo": ""
+		"logo": "https://sparkpool-expo.oss-cn-shanghai.aliyuncs.com/imgs/gasstation.jpg"
 	},
 	{
 		"name": "EthHub",
-		"name_en": "",
+		"name_en": "EthHub",
 		"desc": "",
 		"desc_en": "",
 		"website": "https://docs.ethhub.io/",
 		"tag": "文档",
 		"tag_en": "Documentation",
-		"logo": ""
+		"logo": "https://sparkpool-expo.oss-cn-shanghai.aliyuncs.com/imgs/ethhublogo.png"
 	},
 	{
 		"name": "以太坊白皮书",
@@ -171,7 +170,7 @@
 	},
 	{
 		"name": "Eth Wiki",
-		"name_en": "",
+		"name_en": "Eth Wiki",
 		"desc": "",
 		"desc_en": "",
 		"website": "https://eth.wiki/",
@@ -201,7 +200,7 @@
 	},
 	{
 		"name": "Eth2 Launchpad",
-		"name_en": "",
+		"name_en": "Eth2 Launchpad",
 		"desc": "",
 		"desc_en": "",
 		"website": "https://launchpad.ethereum.org/overview",
@@ -1157,7 +1156,7 @@
 		"website": "https://metamask.io/",
 		"tag": "钱包,热门推荐",
 		"tag_en": "Wallet,Hot",
-		"logo": ""
+		"logo": "https://sparkpool-expo.oss-cn-shanghai.aliyuncs.com/imgs/metamask.png"
 	},
 	{
 		"name": "imToken",
@@ -1167,7 +1166,7 @@
 		"website": "https://token.im/",
 		"tag": "钱包,热门推荐",
 		"tag_en": "Wallet,Hot",
-		"logo": ""
+		"logo": "https://sparkpool-expo.oss-cn-shanghai.aliyuncs.com/imgs/imTokenLogo.svg"
 	},
 	{
 		"name": "Myetherwallet",
@@ -1610,7 +1609,7 @@
 		"logo": ""
 	},
 	{
-		"name": "",
+		"name": "DeFi Weekly",
 		"name_en": "DeFi Weekly",
 		"desc": "",
 		"desc_en": "",
@@ -1620,7 +1619,7 @@
 		"logo": ""
 	},
 	{
-		"name": "",
+		"name": "Bankless",
 		"name_en": "Bankless",
 		"desc": "",
 		"desc_en": "",
@@ -1630,7 +1629,7 @@
 		"logo": ""
 	},
 	{
-		"name": "",
+		"name": "The Defiant",
 		"name_en": "The Defiant",
 		"desc": "",
 		"desc_en": "",
@@ -1640,17 +1639,17 @@
 		"logo": ""
 	},
 	{
-		"name": "",
+		"name": "EthHub",
 		"name_en": "EthHub",
 		"desc": "",
 		"desc_en": "",
 		"website": "https://ethhub.substack.com/",
 		"tag": "资讯/博客",
 		"tag_en": "Newsletter/Blog",
-		"logo": ""
+		"logo": "https://sparkpool-expo.oss-cn-shanghai.aliyuncs.com/imgs/ethhublogo.png"
 	},
 	{
-		"name": "",
+		"name": "Token Daily",
 		"name_en": "Token Daily",
 		"desc": "",
 		"desc_en": "",
@@ -1660,7 +1659,7 @@
 		"logo": ""
 	},
 	{
-		"name": "",
+		"name": "Token Economy",
 		"name_en": "Token Economy",
 		"desc": "",
 		"desc_en": "",
@@ -1670,7 +1669,7 @@
 		"logo": ""
 	},
 	{
-		"name": "",
+		"name": "Coin Metrics' State of the Network",
 		"name_en": "Coin Metrics' State of the Network",
 		"desc": "",
 		"desc_en": "",
@@ -1680,7 +1679,7 @@
 		"logo": ""
 	},
 	{
-		"name": "",
+		"name": "This Week in Blockchain Research",
 		"name_en": "This Week in Blockchain Research",
 		"desc": "",
 		"desc_en": "",
@@ -1690,7 +1689,7 @@
 		"logo": ""
 	},
 	{
-		"name": "",
+		"name": "Vitalik",
 		"name_en": "Vitalik",
 		"desc": "",
 		"desc_en": "",
@@ -1700,7 +1699,7 @@
 		"logo": ""
 	},
 	{
-		"name": "",
+		"name": "Nick Szabo",
 		"name_en": "Nick Szabo",
 		"desc": "",
 		"desc_en": "",
@@ -1710,7 +1709,7 @@
 		"logo": ""
 	},
 	{
-		"name": "",
+		"name": "Samczsun",
 		"name_en": "Samczsun",
 		"desc": "",
 		"desc_en": "",
@@ -1718,6 +1717,6 @@
 		"tag": "资讯/博客",
 		"tag_en": "Newsletter/Blog",
 		"logo": ""
-	}
+	},
 
 ]
