@@ -7,8 +7,8 @@
       "website":"https://ethereum.org/",
       "tag":"热门推荐",
       "tag_en":"Hot",
-      "logo":"https://sparkpool-expo.oss-cn-shanghai.aliyuncs.com/imgs/eth-home-icon.png",
-      "logoWidthAuto":true
+      "logo":"https://sparkpool-expo.oss-cn-shanghai.aliyuncs.com/imgs/hot/ethereum-logo.png",
+      "logoWidthAuto":""
    },
    {
       "name":"以太坊官方博客",
@@ -95,7 +95,7 @@
       "website":"https://etherscan.io/",
       "tag":"浏览器,热门推荐",
       "tag_en":"Explorer,Hot",
-      "logo":"https://sparkpool-expo.oss-cn-shanghai.aliyuncs.com/imgs/ethscan.png",
+      "logo":"https://sparkpool-expo.oss-cn-shanghai.aliyuncs.com/imgs/hot/etherscan.jpg",
       "logoWidthAuto":""
    },
    {
