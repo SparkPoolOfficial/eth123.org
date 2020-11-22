@@ -8,7 +8,7 @@
       "tag":"热门推荐",
       "tag_en":"Hot",
       "logo":"https://sparkpool-expo.oss-cn-shanghai.aliyuncs.com/imgs/hot/eth.png",
-      "logoWidthAuto":true
+      "logoWidthAuto":""
    },
    {
       "name":"以太坊官方博客",
