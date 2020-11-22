@@ -8,7 +8,7 @@
       "tag":"热门推荐",
       "tag_en":"Hot",
       "logo":"https://sparkpool-expo.oss-cn-shanghai.aliyuncs.com/imgs/hot/eth.png",
-      "logoWidthAuto":""
+      "logoWidthAuto":true
    },
    {
       "name":"以太坊官方博客",
@@ -117,7 +117,7 @@
       "website":"https://www.ethvm.com/",
       "tag":"浏览器",
       "tag_en":"Explorer",
-      "logo":"",
+      "logo":"https://sparkpool-expo.oss-cn-shanghai.aliyuncs.com/imgs/explorer/ethvm.jpeg",
       "logoWidthAuto":""
    },
    {
@@ -128,7 +128,7 @@
       "website":"https://ethplorer.io/",
       "tag":"浏览器",
       "tag_en":"Explorer",
-      "logo":"",
+      "logo":"https://sparkpool-expo.oss-cn-shanghai.aliyuncs.com/imgs/explorer/ethplorer.jpg",
       "logoWidthAuto":""
    },
    {
@@ -162,17 +162,6 @@
       "tag":"工具",
       "tag_en":"Tool",
       "logo":"https://sparkpool-expo.oss-cn-shanghai.aliyuncs.com/imgs/gasstation.jpg",
-      "logoWidthAuto":""
-   },
-   {
-      "name":"EthHub",
-      "name_en":"EthHub",
-      "desc":"",
-      "desc_en":"",
-      "website":"https://docs.ethhub.io/",
-      "tag":"文档",
-      "tag_en":"Documentation",
-      "logo":"https://sparkpool-expo.oss-cn-shanghai.aliyuncs.com/imgs/ethhublogo.png",
       "logoWidthAuto":""
    },
    {
@@ -220,17 +209,6 @@
       "logoWidthAuto":""
    },
    {
-      "name":"2.0 设计原理",
-      "name_en":"2.0 Design Rationale",
-      "desc":"",
-      "desc_en":"",
-      "website":"http://notes.ethereum.org/@vbuterin/rkhCgQteN?type=view#",
-      "tag":"Eth2 资源,文档",
-      "tag_en":"Eth2 Resources,Documentation",
-      "logo":"",
-      "logoWidthAuto":""
-   },
-   {
       "name":"Eth2 Launchpad",
       "name_en":"Eth2 Launchpad",
       "desc":"",
@@ -239,6 +217,17 @@
       "tag":"Eth2 资源",
       "tag_en":"Eth2 Resources",
       "logo":"https://sparkpool-expo.oss-cn-shanghai.aliyuncs.com/imgs/ethblog.png",
+      "logoWidthAuto":""
+   },
+   {
+      "name":"EthHub",
+      "name_en":"EthHub",
+      "desc":"",
+      "desc_en":"",
+      "website":"https://docs.ethhub.io/",
+      "tag":"文档",
+      "tag_en":"Documentation",
+      "logo":"https://sparkpool-expo.oss-cn-shanghai.aliyuncs.com/imgs/ethhublogo.png",
       "logoWidthAuto":""
    },
    {
@@ -316,6 +305,17 @@
       "tag":"Eth2 资源,浏览器",
       "tag_en":"Eth2 Resources,Explorer",
       "logo":"https://sparkpool-expo.oss-cn-shanghai.aliyuncs.com/imgs/ethnode.jpg",
+      "logoWidthAuto":""
+   },
+   {
+      "name":"2.0 设计原理",
+      "name_en":"2.0 Design Rationale",
+      "desc":"",
+      "desc_en":"",
+      "website":"http://notes.ethereum.org/@vbuterin/rkhCgQteN?type=view#",
+      "tag":"Eth2 资源,文档",
+      "tag_en":"Eth2 Resources,Documentation",
+      "logo":"",
       "logoWidthAuto":""
    },
    {
@@ -689,7 +689,7 @@
       "website":"https://balancer.finance",
       "tag":"DeFi",
       "tag_en":"DeFi",
-      "logo":"https://sparkpool-expo.oss-cn-shanghai.aliyuncs.com/imgs/Screen%20Shot%202020-11-05%20at%2016.40.37-1604565642997.png",
+      "logo":"https://sparkpool-expo.oss-cn-shanghai.aliyuncs.com/imgs/Defi/balancer.jpg",
       "logoWidthAuto":""
    },
    {
@@ -807,7 +807,7 @@
       "name_en":"",
       "desc":"",
       "desc_en":"",
-      "website":"https://dfi.money/#/",
+      "website":"https://dfi.money/",
       "tag":"DeFi",
       "tag_en":"DeFi",
       "logo":"https://sparkpool-expo.oss-cn-shanghai.aliyuncs.com/imgs/YFII-logo.290fda47.png",
@@ -1206,7 +1206,7 @@
       "website":"https://coinmetrics.io/",
       "tag":"数据分析",
       "tag_en":"Data Analysis",
-      "logo":"https://sparkpool-expo.oss-cn-shanghai.aliyuncs.com/imgs/Data%20Analysis/coimmetrics.png",
+      "logo":"https://sparkpool-expo.oss-cn-shanghai.aliyuncs.com/imgs/blog/coinmetrics.png",
       "logoWidthAuto":""
    },
    {
@@ -1562,11 +1562,11 @@
       "logoWidthAuto":""
    },
    {
-      "name":"Snapshpt",
+      "name":"Snapshot",
       "name_en":"",
       "desc":"",
       "desc_en":"",
-      "website":"https://snapshot.page/#/",
+      "website":"https://snapshot.page/",
       "tag":"DAO",
       "tag_en":"DAO",
       "logo":"https://sparkpool-expo.oss-cn-shanghai.aliyuncs.com/imgs/DAO/snapshot.jpg",
@@ -1611,8 +1611,8 @@
       "desc":"",
       "desc_en":"",
       "website":"https://deepdao.io/#/deepdao/dashboard",
-      "tag":"DAO",
-      "tag_en":"DAO",
+      "tag":"DAO,数据分析",
+      "tag_en":"DAO,Data Analysis",
       "logo":"https://sparkpool-expo.oss-cn-shanghai.aliyuncs.com/imgs/DAO/DeepDAO_logo.png",
       "logoWidthAuto":""
    },
