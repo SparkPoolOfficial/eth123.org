@@ -9,15 +9,16 @@ import {
   Avatar,
   Button,
 } from '@material-ui/core';
-import Skeleton from '@material-ui/lab/Skeleton';
 import {
   createMuiTheme,
   ThemeProvider,
 } from '@material-ui/core/styles';
+import { Skeleton } from '@material-ui/lab';
+import { Language } from '@material-ui/icons';
 
 import NavBar from './components/NavBar';
 
-import LogoImg from './assets/logo_title.svg';
+import LogoImg from './assets/logo_title_new.svg';
 
 import { get } from './services/fetch';
 
@@ -131,6 +132,7 @@ class App extends React.Component {
                   <Link
                     color="textPrimary"
                     href={`${item.website}?utm_resource=eth123.org`}
+                    target="_blank"
                     underline='none'>
                     <Box
                       bgcolor="white"
@@ -316,17 +318,23 @@ class App extends React.Component {
         <Container>
           <Box mt={2} display="flex" flexDirection="column" alignItems="flex-end">
             <Button
+              disableElevation={true}
+              variant="outlined"
               onClick={() => {
                 this.setState({
                   language: language === 'zh' ? 'en' : 'zh',
                 })
-              }}>
-              {language === "zh" ? 'English' : '简体中文'}
+              }}
+              startIcon={<Language />}
+              style={{ textTransform: 'none' }}>
+              <Box fontWeight="400">
+                {language === "zh" ? 'English' : '简体中文'}
+              </Box>
             </Button>
           </Box>
           <Box mb={4} display="flex" flexDirection="column" alignItems="center">
             <Box mb={1}>
-              <img src={LogoImg} alt="eth123" />
+              <img src={LogoImg} alt="eth123" height={34}/>
             </Box>
             <Box>
               <Typography color="textSecondary">
@@ -364,6 +372,7 @@ class App extends React.Component {
                   variant="contained"
                   className="submitBtn"
                   color="primary"
+                  style={{ textTransform: 'none' }}
                   onClick={() => {
                     window.open('https://github.com/SparkPoolOfficial/eth123.org/issues');
                   }}
