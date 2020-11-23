@@ -44,8 +44,12 @@
     "tag_en":"Wallet"
   },
   {
-    "tag": "客户端",
-    "tag_en":"Client"
+    "tag": "ETH1 客户端",
+    "tag_en":"ETH1 Client"
+  },
+  {
+    "tag": "ETH2 客户端",
+    "tag_en":"ETH2 Client"
   },
   {
     "tag": "预言机",
@@ -60,8 +64,8 @@
     "tag_en":"Developer Resources"
   },
   {
-    "tag": "资讯/博客",
-    "tag_en":"Newsletter/Blog"
+    "tag": "资讯/洞见",
+    "tag_en":"Information/Insight"
   },
   {
     "tag": "其它",
