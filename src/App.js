@@ -32,7 +32,7 @@ const theme = createMuiTheme({
 
 const translation = {
   zh: {
-    subTitle: '以太坊生态项目导航',
+    subTitle: '以太坊生态资源导航',
     more: '一起发现更多新产品',
     submit: '提交',
   },
