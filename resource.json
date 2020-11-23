@@ -9,7 +9,7 @@
       "tag_en":"Hot",
       "logo":"https://sparkpool-expo.oss-cn-shanghai.aliyuncs.com/imgs/hot/eth.png",
       "image":"https://sparkpool-expo.oss-cn-shanghai.aliyuncs.com/imgs/image/ethereum-logo-.png",
-      "logoWidthAuto":true
+      "logoWidthAuto":""
    },
    {
       "name":"以太坊官方博客",
