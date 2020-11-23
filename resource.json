@@ -1560,18 +1560,6 @@
       "logoWidthAuto":""
    },
    {
-      "name":"Parity",
-      "name_en":"",
-      "desc":"",
-      "desc_en":"",
-      "website":"http://www.parity.io/ethereum",
-      "tag":"ETH1 客户端",
-      "tag_en":"ETH1 Client",
-      "logo":"https://sparkpool-expo.oss-cn-shanghai.aliyuncs.com/imgs/Client/Parity.jpg",
-      "image":"",
-      "logoWidthAuto":""
-   },
-   {
       "name":"Open Ethereum",
       "name_en":"",
       "desc":"",
