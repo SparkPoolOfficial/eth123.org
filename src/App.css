@@ -17,7 +17,7 @@
 }
 
 .hotCard:hover {
-  color: #ff7828;
+  box-shadow: 0px 8px 32px 0px #CDD3DF;
 }
 
 .hotCard > img {

@@ -9,6 +9,7 @@ import {
   Avatar,
   Button,
 } from '@material-ui/core';
+import Skeleton from '@material-ui/lab/Skeleton';
 import {
   createMuiTheme,
   ThemeProvider,
@@ -88,8 +89,203 @@ class App extends React.Component {
     return translation[language][key];
   }
 
-  renderDesc = (item) => {
-    const { language } = this.state;
+  getSkeletonList = (length = 8) => {
+    let list = [];
+    for (let i = 0; i < length; i++) {
+      list.push(i);
+    }
+    return list;
+  }
+
+  renderHotCard = () => {
+    const { navList, tagList } = this.state;
+    if (!(tagList || []).length) return null;
+    if (!(navList || []).length) {
+      let skeletonList = this.getSkeletonList();
+      return (
+        <Box mb={2} id={encodeURI((tagList[0] || {}).tag_en)}>
+          <Grid container spacing={2}>
+            {
+              (skeletonList).map((key, index) => (
+                <Grid item xs={6} sm={4} md={3} key={`${key}-${index}`}>
+                  <Box
+                    bgcolor="white"
+                    style={{ height: 92 }}
+                    borderRadius={8}
+                  />
+                </Grid>
+              ))
+            }
+          </Grid>
+        </Box>
+      )
+    }
+    return (
+      <Box mb={2} id={encodeURI((tagList[0] || {}).tag_en)}>
+        <Grid container spacing={2}>
+          {
+            (navList || [])
+              .filter(item => (item.tag_en || '').indexOf('Hot') > -1)
+              .map((item, index) => (
+                <Grid item xs={6} sm={4} md={3} key={`Hot-${index}`}>
+                  <Link
+                    color="textPrimary"
+                    href={`${item.website}?utm_resource=eth123.org`}
+                    underline='none'>
+                    <Box
+                      bgcolor="white"
+                      display="flex"
+                      flexDirection="column"
+                      alignItems="center"
+                      justifyContent="center"
+                      className="hotCard"
+                      px={2}
+                      borderRadius={8}
+                    >
+                      <img
+                        src={item.image}
+                        alt=""
+                        height={92}
+                      />
+                    </Box>
+                  </Link>
+                </Grid>
+              ))
+          }
+        </Grid>
+      </Box>
+    );
+  }
+
+  /**
+   * render wrap of category for navList
+   * @return {ReactNode}
+   */
+  renderNavContentCard = () => {
+    const { tagList, language } = this.state;
+    return (tagList || []).slice(1).map((item) => (
+      <Box
+        bgcolor="white"
+        borderRadius={16}
+        mb={2}
+        key={item.tag_en}
+        id={encodeURI(item.tag_en)}
+        px={3}
+      >
+        <Box
+          py={2}
+          border={1}
+          borderTop={0}
+          borderRight={0}
+          borderLeft={0}
+          borderColor="grey.100"
+        >
+          <Typography>
+            {language === 'zh' ? item.tag : item.tag_en}
+          </Typography>
+        </Box>
+        <Box py={3}>
+          <Grid container spacing={1}>
+            {this.renderNavCard(item.tag_en)}
+          </Grid>
+        </Box>
+      </Box>
+    ));
+  }
+
+  /**
+   * render nav category item
+   * @param  {String} tag navList.item_tag_en
+   * @return {ReactNode}
+   */
+  renderNavCard = (tag_en) => {
+    const { navList, language } = this.state;
+    if (!(navList || []).length) {
+      let skeletonList = this.getSkeletonList();
+      return (
+        (skeletonList).map((key, index) => (
+          <Grid item xs={6} sm={4} md={3} key={`${key}-${index}`}>
+            <Box display="flex" flexDirection="row" p={1}>
+              <Box mr={1}>
+                <Skeleton variant="circle" width={30} height={30} />
+              </Box>
+              <Box flex="1">
+                <Skeleton variant="text" />
+                <Skeleton variant="text" />
+              </Box>
+            </Box>
+          </Grid>
+        ))
+      )
+    }
+    return (navList || [])
+      .filter((item) => item.tag_en.indexOf(tag_en) > -1)
+      .map((item, index) => (
+        <Grid item xs={6} sm={4} md={3} key={index}>
+          <Link
+            color="textPrimary"
+            href={`${item.website}?utm_resource=eth123.org`}
+            target="_blank"
+            underline='none'>
+            <Box
+              className='cardItem'
+              display="flex"
+              flexDirection="row"
+              p={1}
+              borderRadius={8}>
+              <Box mr={1}>
+                {this.renderItemLogo(item, language)}
+              </Box>
+              <Box>
+                <Box
+                  display="flex"
+                  flexDirection="row"
+                  alignItems="center"
+                  style={{ height: 30 }}>
+                  <Typography
+                    variant="body1"
+                    className="cardItem_title"
+                    style={{ fontWeight: 500 }}>
+                    {language === 'zh' ? item.name : (item.name_en || item.name)}
+                  </Typography>
+                </Box>
+                <Box style={{ lineHeight: '20px' }}>
+                  <Typography
+                    variant="caption"
+                    style={{ color: '#999', wordBreak: 'break-all' }}>
+                    {this.renderDesc(item, language)}
+                  </Typography>
+                </Box>
+              </Box>
+            </Box>
+          </Link>
+        </Grid>
+      ));
+  }
+
+  // render nav item logo
+  renderItemLogo = (item, language) => {
+    const { logo, name, name_en } = item;
+    if (logo) {
+      return (
+        <Avatar
+          style={{
+            height: item.logoHeightAuto ? 'auto' : 30,
+            width: item.logoWidthAuto ? 'auto' : 30
+          }}
+          src={item.logo}
+        />
+      )
+    }
+    return (
+      <Avatar style={{ height: 30, width: 30 }}>
+        {(language === 'zh' ? name : (name_en || name)).slice(0, 1)}
+      </Avatar>
+    )
+  }
+
+  // render item desc
+  renderDesc = (item, language) => {
     const { desc, desc_en, website } = item;
     if (language === 'zh' && desc) {
       return desc;
@@ -101,141 +297,6 @@ class App extends React.Component {
       url = url.slice(0, url.length - 1);
     }
     return url;
-  }
-
-  renderHotCard = () => {
-    const { navList, tagList } = this.state;
-    let node = [];
-    navList.forEach((item, index) => {
-      if (item.tag_en.indexOf('Hot') > -1) {
-        node.push(
-          <Grid item xs={6} sm={4} md={3} key={index}>
-            <Link
-              color="textPrimary"
-              href={item.website}
-              underline='none'>
-              <Box
-                bgcolor="white"
-                display="flex"
-                flexDirection="column"
-                alignItems="center"
-                justifyContent="center"
-                className="hotCard"
-                py={2}
-                px={2}
-                borderRadius={8}
-              >
-                <img
-                  src={item.logo}
-                  alt=""
-                />
-              </Box>
-            </Link>
-          </Grid>
-        )
-      }
-    });
-    return (
-      <Box mb={2} id={(tagList[0] || {}).tag}>
-        <Grid container spacing={2}>
-          {node}
-        </Grid>
-      </Box>
-    );
-  }
-
-  renderNavContentCard = () => {
-    const { tagList, language } = this.state;
-    // return (tagList || []).filter((item) => item.tag_en !== 'Home').map(({ tag, tag_en}) => (
-    return (tagList || []).map((item) => {
-      let tagName = language === 'zh' ? item.tag : item.tag_en;
-      return (
-        <Box
-          bgcolor="white"
-          borderRadius={16}
-          mb={2}
-          key={tagName}
-          id={encodeURI(item.tag_en)}
-          px={3}
-        >
-          <Box
-            py={2}
-            border={1}
-            borderTop={0}
-            borderRight={0}
-            borderLeft={0}
-            borderColor="grey.100"
-          >
-            <Typography>{tagName}</Typography>
-          </Box>
-          <Box py={3}>
-            <Grid container spacing={1}>
-              { this.renderNavCard(tagName) }
-            </Grid>
-          </Box>
-        </Box>
-      )
-    })
-  }
-
-  renderNavCard = (tag) => {
-    const { navList, language } = this.state;
-    let node = [];
-    (navList || []).forEach((item, index) => {
-      let tagName = language === 'zh' ? item.tag : item.tag_en;
-      if (tagName.indexOf(tag) > -1) {
-        node.push(
-          <Grid item xs={6} sm={4} md={3} key={index}>
-            <Link
-              color="textPrimary"
-              href={`${item.website}?utm_resource=eth123.org`}
-              target="_blank"
-              underline='none'>
-              <Box
-                className='cardItem'
-                display="flex"
-                flexDirection="row"
-                p={1}
-                borderRadius={8}>
-                <Box mr={1}>
-                  {
-                    item.logo ? (
-                      <Avatar style={{ height: item.logoHeightAuto ? 'auto' : 30, width: item.logoWidthAuto ? 'auto' : 30 }} src={item.logo} />
-                    ) : (
-                      <Avatar style={{ height: 30, width: 30 }}>
-                        {(language === 'zh' ? item.name : (item.name_en || item.name)).slice(0, 1)}
-                      </Avatar>
-                    )
-                  }
-                </Box>
-                <Box>
-                  <Box
-                    display="flex"
-                    flexDirection="row"
-                    alignItems="center"
-                    style={{ height: 30 }}>
-                    <Typography
-                      variant="body1"
-                      className="cardItem_title"
-                      style={{ fontWeight: 500 }}>
-                      {language === 'zh' ? item.name : (item.name_en || item.name)}
-                    </Typography>
-                  </Box>
-                  <Box style={{ lineHeight: '20px' }}>
-                    <Typography
-                      variant="caption"
-                      style={{ color: '#999', wordBreak: 'break-all' }}>
-                      {this.renderDesc(item)}
-                    </Typography>
-                  </Box>
-                </Box>
-              </Box>
-            </Link>
-          </Grid>
-        )
-      }
-    });
-    return node;
   }
 
   render() {
@@ -260,9 +321,7 @@ class App extends React.Component {
                   language: language === 'zh' ? 'en' : 'zh',
                 })
               }}>
-              {
-                language === "zh" ? 'English' : '简体中文'
-              }
+              {language === "zh" ? 'English' : '简体中文'}
             </Button>
           </Box>
           <Box mb={4} display="flex" flexDirection="column" alignItems="center">
@@ -282,6 +341,7 @@ class App extends React.Component {
               key={`NavBar-${(tagList || []).length}`}
             />
             <Box className="tagContent" key={(navList || []).length}>
+              {this.renderHotCard()}
               {this.renderNavContentCard()}
             </Box>
           </Box>
