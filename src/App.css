@@ -12,32 +12,6 @@
   /* min-width: 1042px; */
 }
 
-.tagLink {
-  display: block;
-  position: relative;
-  padding-left: 8px;
-}
-
-.tagLink:hover {
-  color: #ff7828;
-  background-color: rgba(255, 120, 40, .1);
-}
-
-.tagLink_active {
-  color: #ff7828!important;
-  font-weight: 500;
-}
-
-.tagLink_active::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  margin-top: -6px;
-  height: 12px;
-  width: 4px;
-  background-color: #ff7828;
-}
-
 .hotCard {
   min-height: 92px;
 }

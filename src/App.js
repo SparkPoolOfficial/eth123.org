@@ -4,7 +4,6 @@ import {
   Container,
   Box,
   Typography,
-  Hidden,
   Grid,
   Link,
   Avatar,
@@ -14,6 +13,8 @@ import {
   createMuiTheme,
   ThemeProvider,
 } from '@material-ui/core/styles';
+
+import NavBar from './components/NavBar';
 
 import LogoImg from './assets/logo_title.svg';
 
@@ -46,9 +47,7 @@ const translation = {
 class App extends React.Component {
 
   state = {
-    sticky: false,
     footerVisible: false,
-    activityKey: 'Hot',
     tagList: [],
     navList: [],
 
@@ -56,31 +55,21 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    this.getTagList();
-    this.fetchData();
-
-    const { hash } = window.location;
-    if (hash) {
-      this.setState({
-        activityKey: decodeURIComponent(hash.split('#')[1]),
-      });
-    }
-
-    window.addEventListener("scroll", () => {
-      const { sticky } = this.state;
-      if (document.documentElement.scrollTop > 157 && !sticky) {
-        this.setState({
-          sticky: true,
-        });
-      } else if (document.documentElement.scrollTop < 157 && sticky) {
-        this.setState({
-          sticky: false,
-        });
-      }
-    });
+    this.fetchTagList();
+    this.fetchNavList();
   }
 
-  fetchData = async () => {
+  fetchTagList = async (navList) => {
+    // const res = await get('/tagList.json');
+    const res = await get('https://expo-res.sparkpool.com/SparkPoolOfficial/eth123.org/main/tagList.json');
+    if (res && (res || []).length) {
+      this.setState({
+        tagList: res,
+      });
+    }
+  }
+
+  fetchNavList = async () => {
     // const res = await get('/resource.json');
     const res = await get('https://expo-res.sparkpool.com/SparkPoolOfficial/eth123.org/main/resource.json');
     if (res && (res || []).length) {
@@ -91,16 +80,6 @@ class App extends React.Component {
         });
       } catch (e) {
       }
-    }
-  }
-
-  getTagList = async (navList) => {
-    // const res = await get('/tagList.json');
-    const res = await get('https://expo-res.sparkpool.com/SparkPoolOfficial/eth123.org/main/tagList.json');
-    if (res && (res || []).length) {
-      this.setState({
-        tagList: res,
-      });
     }
   }
 
@@ -176,7 +155,7 @@ class App extends React.Component {
           borderRadius={16}
           mb={2}
           key={tagName}
-          id={item.tag_en}
+          id={encodeURI(item.tag_en)}
           px={3}
         >
           <Box
@@ -262,10 +241,9 @@ class App extends React.Component {
   render() {
 
     const {
+      navList,
       tagList,
-      sticky,
       footerVisible,
-      activityKey,
       language,
     } = this.state;
 
@@ -298,36 +276,12 @@ class App extends React.Component {
             </Box>
           </Box>
           <Box display="flex" flexDirection="row">
-            <Hidden mdDown>
-              <Box
-                px={1}
-                className={sticky ? "tagNav tagNav_fixed" : "tagNav"}
-                id="tagNav">
-                {
-                  (tagList || []).map(({ tag, tag_en }, index) => {
-                    let tagName = language === 'zh' ? tag : tag_en;
-                    return (
-                      <Link
-                        color="textPrimary"
-                        href={`#${tag_en}`}
-                        key={tagName}
-                        className={ activityKey === tag_en ? "tagLink tagLink_active" : 'tagLink'}
-                        underline="none"
-                        onClick={() => {
-                          this.setState({
-                            activityKey: tag_en,
-                          });
-                        }}
-                        >
-                          <Box py={1} px={2}>{tagName}</Box>
-                        </Link>
-                      )
-                  })
-                  }
-                </Box>
-                <Box flex={1}></Box>
-            </Hidden>
-            <Box className="tagContent">
+            <NavBar
+              tagList={tagList}
+              language={language}
+              key={`NavBar-${(tagList || []).length}`}
+            />
+            <Box className="tagContent" key={(navList || []).length}>
               {this.renderNavContentCard()}
             </Box>
           </Box>

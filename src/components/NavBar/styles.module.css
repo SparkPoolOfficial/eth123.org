@@ -1,0 +1,29 @@
+.NavBa_fixed {
+  position: fixed;
+  top: 0;
+}
+
+.link {
+  position: relative;
+}
+
+.link:hover {
+  font-weight: 500;
+  color: #ff7828;
+  background-color: rgba(255, 120, 40, .1);
+}
+
+.NavBar .link_active {
+  font-weight: 500;
+  color: #ff7828;
+}
+
+.link_active::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  margin-top: -6px;
+  height: 12px;
+  width: 4px;
+  background-color: #ff7828;
+}
