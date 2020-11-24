@@ -24,16 +24,44 @@
     "tag_en":"DeFi"
   },
   {
-    "tag": "Layer2",
-    "tag_en":"Layer2"
+    "tag": "去中心化交易所",
+    "tag_en":"DEX"
   },
   {
-    "tag": "DAO",
-    "tag_en":"DAO"
+    "tag": "借贷",
+    "tag_en":"Lending"
+  },
+  {
+    "tag": "衍生品",
+    "tag_en":"Derivatives"
+  },
+  {
+    "tag": "保险",
+    "tag_en":"Insurance"
+  },
+  {
+    "tag": "资产管理工具",
+    "tag_en":"Asset Management Tool"
+  },
+  {
+    "tag": "稳定币",
+    "tag_en":"Stablecoin"
+  },
+  {
+    "tag": "BTC 锚定币",
+    "tag_en":"Bitcoin-pegged Token"
   },
   {
     "tag": "数据分析",
     "tag_en":"Data Analysis"
+  },
+  {
+    "tag": "Rollup",
+    "tag_en":"Rollup"
+  },
+  {
+    "tag": "Layer2",
+    "tag_en":"Layer2"
   },
   {
     "tag": "工具",
@@ -60,12 +88,36 @@
     "tag_en":"dApp"
   },
   {
+    "tag": "隐私",
+    "tag_en":"Privacy"
+  },
+  {
     "tag": "开发者",
     "tag_en":"Developer Resources"
   },
   {
-    "tag": "资讯/洞见",
-    "tag_en":"Information/Insight"
+    "tag": "安全",
+    "tag_en":"Security"
+  },
+  {
+    "tag": "资讯",
+    "tag_en":"Newsletter"
+  },
+  {
+    "tag": "Blog",
+    "tag_en":"Newsletter"
+  },
+  {
+    "tag": "播客",
+    "tag_en":"Podcast"
+  },
+  {
+    "tag": "DAO",
+    "tag_en":"DAO"
+  },
+  {
+    "tag": "NFT",
+    "tag_en":"NFT"
   },
   {
     "tag": "其它",
