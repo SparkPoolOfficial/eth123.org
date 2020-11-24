@@ -30,7 +30,7 @@ const theme = createMuiTheme({
       main: '#ff7828',
       contrastText: '#fff',
     },
-  }
+  },
 });
 
 const translation = {
@@ -75,13 +75,10 @@ class App extends React.Component {
     // const res = await get('/resource.json');
     const res = await get('https://expo-res.sparkpool.com/SparkPoolOfficial/eth123.org/main/resource.json');
     if (res && (res || []).length) {
-      try {
-        this.setState({
-          navList: res,
-          footerVisible: true,
-        });
-      } catch (e) {
-      }
+      this.setState({
+        navList: res,
+        footerVisible: true,
+      });
     }
   }
 
@@ -111,8 +108,8 @@ class App extends React.Component {
                 <Grid item xs={6} sm={4} md={3} key={`${key}-${index}`}>
                   <Box
                     bgcolor="white"
-                    style={{ height: 92 }}
                     borderRadius={8}
+                    className="skeletonHotCard"
                   />
                 </Grid>
               ))
@@ -147,7 +144,6 @@ class App extends React.Component {
                       <img
                         src={item.image}
                         alt=""
-                        height={92}
                       />
                     </Box>
                   </Link>
@@ -172,7 +168,7 @@ class App extends React.Component {
         mb={2}
         key={item.tag_en}
         id={encodeURI(item.tag_en)}
-        px={3}
+        px={{ xs: 2, sm: 2, md: 3 }}
       >
         <Box
           py={2}
@@ -186,8 +182,8 @@ class App extends React.Component {
             {language === 'zh' ? item.tag : item.tag_en}
           </Typography>
         </Box>
-        <Box py={3}>
-          <Grid container spacing={1}>
+        <Box py={{ xs: 2, sm: 2, md: 3 }}>
+          <Grid container spacing={2}>
             {this.renderNavCard(item.tag_en)}
           </Grid>
         </Box>
@@ -207,7 +203,7 @@ class App extends React.Component {
       return (
         (skeletonList).map((key, index) => (
           <Grid item xs={6} sm={4} md={3} key={`${key}-${index}`}>
-            <Box display="flex" flexDirection="row" p={1}>
+            <Box display="flex" flexDirection="row" p={{ xs: 0, sm: 1 }}>
               <Box mr={1}>
                 <Skeleton variant="circle" width={30} height={30} />
               </Box>
@@ -233,17 +229,16 @@ class App extends React.Component {
               className='cardItem'
               display="flex"
               flexDirection="row"
-              p={1}
+              p={{ xs: 0, sm: 1 }}
               borderRadius={8}>
-              <Box mr={1}>
+              <Box mr={{ xs: 1, sm: 1 }}>
                 {this.renderItemLogo(item, language)}
               </Box>
               <Box>
                 <Box
                   display="flex"
                   flexDirection="row"
-                  alignItems="center"
-                  style={{ height: 30 }}>
+                  alignItems="center">
                   <Typography
                     variant="body1"
                     className="cardItem_title"
@@ -268,19 +263,20 @@ class App extends React.Component {
   // render nav item logo
   renderItemLogo = (item, language) => {
     const { logo, name, name_en } = item;
+    const size = 30;
     if (logo) {
       return (
         <Avatar
           style={{
-            height: item.logoHeightAuto ? 'auto' : 30,
-            width: item.logoWidthAuto ? 'auto' : 30
+            height: item.logoHeightAuto ? 'auto' : size,
+            width: item.logoWidthAuto ? 'auto' : size
           }}
           src={item.logo}
         />
       )
     }
     return (
-      <Avatar style={{ height: 30, width: 30 }}>
+      <Avatar style={{ height: size, width: size }}>
         {(language === 'zh' ? name : (name_en || name)).slice(0, 1)}
       </Avatar>
     )
@@ -316,7 +312,11 @@ class App extends React.Component {
       <ThemeProvider theme={theme}>
         <CssBaseline />
         <Container>
-          <Box mt={2} display="flex" flexDirection="column" alignItems="flex-end">
+          <Box
+            display="flex"
+            flexDirection="column"
+            alignItems="flex-end"
+            mt={{ xs: 1, sm: 2 }}>
             <Button
               disableElevation={true}
               variant="outlined"
@@ -325,15 +325,21 @@ class App extends React.Component {
                   language: language === 'zh' ? 'en' : 'zh',
                 })
               }}
+              size="small"
               startIcon={<Language />}
+              className="languageBtn"
               style={{ textTransform: 'none' }}>
-              <Box fontWeight="400">
+              <Box fontWeight="400" className="languageBtn_text">
                 {language === "zh" ? 'English' : '简体中文'}
               </Box>
             </Button>
           </Box>
-          <Box mb={4} display="flex" flexDirection="column" alignItems="center">
-            <Box mb={1}>
+          <Box
+            display="flex"
+            flexDirection="column"
+            alignItems="center"
+            mb={{ xs: 2, sm: 3, md: 4 }}>
+            <Box mb={{ xs: .5, sm: 1 }}>
               <img src={LogoImg} alt="eth123" height={34}/>
             </Box>
             <Box>
@@ -362,8 +368,8 @@ class App extends React.Component {
                 flexDirection="column"
                 alignItems="center"
                 className="footer"
-                py={4}>
-                <Box mb={3}>
+                py={{ xs: 3, sm: 3, md: 4 }}>
+                <Box mb={{ xs: 1.25, sm: 2, md: 3 }}>
                   <Typography variant="h5" className="footer_title">
                     {t('more')}
                   </Typography>
@@ -380,7 +386,11 @@ class App extends React.Component {
                   {t('submit')}
                 </Button>
               </Box>
-              <Box display="flex" flexDirection="row" justifyContent="center" py={2}>
+              <Box
+                display="flex"
+                flexDirection="row"
+                justifyContent="center"
+                py={{ xs: 1, sm: 2 }}>
                 <Box>Sponsored By&nbsp;</Box>
                 <Box color="#ff7828">
                   <Link href="https://www.sparkpool.com" underline="none">

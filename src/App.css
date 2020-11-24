@@ -1,19 +1,5 @@
-.tagNav {
-  /* width: 120px; */
-}
-
-.tagNav_fixed {
-  position: fixed;
-  top: 0;
-}
-
 .tagContent {
   width: 1042px;
-  /* min-width: 1042px; */
-}
-
-.hotCard {
-  min-height: 92px;
 }
 
 .hotCard:hover {
@@ -24,9 +10,21 @@
   max-width: 100%;
 }
 
+
+@media screen and (min-width: 600px) {
+  .skeletonHotCard, .hotCard {
+    height: 92px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .skeletonHotCard, .hotCard {
+    height: 78px;
+  }
+}
+
 .cardItem:hover {
   background-color: #f8f8f8;
-
 }
 
 .cardItem:hover .cardItem_title {
@@ -34,6 +32,12 @@
 }
 
 .cardItem_title {
+  display: -webkit-box;
+  /*! autoprefixer: off */
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  text-overflow: ellipsis;
+  overflow: hidden;
   line-height: 30px;
   color: #333;
 }
