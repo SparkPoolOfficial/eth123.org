@@ -5,7 +5,7 @@ import {
   Link,
 } from '@material-ui/core';
 
-import { getSkeletonList } from '../services';
+import { getSkeletonList, trackEvent } from '../services';
 
 class NavHotItemCard extends PureComponent {
 
@@ -44,7 +44,10 @@ class NavHotItemCard extends PureComponent {
                     color="textPrimary"
                     href={`${item.website}?utm_resource=eth123.org`}
                     target="_blank"
-                    underline='none'>
+                    underline='none'
+                    onClick={() => {
+                      trackEvent(item.tag_en, (item.name_en || item.name));
+                    }}>
                     <Box
                       bgcolor="white"
                       display="flex"

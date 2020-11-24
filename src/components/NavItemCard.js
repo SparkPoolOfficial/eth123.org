@@ -8,7 +8,7 @@ import {
 } from '@material-ui/core';
 import { Skeleton } from '@material-ui/lab';
 
-import { getSkeletonList } from '../services';
+import { getSkeletonList, trackEvent } from '../services';
 
 class NavItemCard extends PureComponent {
 
@@ -45,7 +45,10 @@ class NavItemCard extends PureComponent {
             color="textPrimary"
             href={`${item.website}?utm_resource=eth123.org`}
             target="_blank"
-            underline='none'>
+            underline='none'
+            onClick={() => {
+              trackEvent(item.tag_en, (item.name_en || item.name));
+            }}>
             <Box
               className='cardItem'
               display="flex"

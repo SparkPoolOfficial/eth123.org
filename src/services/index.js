@@ -5,3 +5,11 @@ export const getSkeletonList = (length = 8) => {
   }
   return list;
 }
+
+export const trackEvent = (tag, name) => {
+  try {
+    window._hmt.push(['_trackEvent', tag, 'click', name]);
+  } catch (e) {
+    console.log(e);
+  }
+}
