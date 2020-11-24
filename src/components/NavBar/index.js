@@ -6,10 +6,13 @@ import {
   Drawer,
   Divider,
 } from '@material-ui/core';
+import { Skeleton } from '@material-ui/lab';
 import classnames from 'classnames';
+import throttle from 'lodash.throttle';
 
 import LogoImg from '../../assets/logo_title_new.svg';
 import styles from './styles.module.css';
+import { getSkeletonList } from '../../services';
 
 let navHeight;
 
@@ -23,11 +26,13 @@ class NavBar extends PureComponent {
 
   componentDidMount() {
     const { tagList } = this.props;
-    if ((tagList || []).length) {
+    const length = (tagList || []).length;
+    if (length) {
+      window.localStorage.setItem('tagListLength', length);
       // nav bar height
-      navHeight = (tagList || []).length * 36;
+      navHeight = length * 36;
       this.initActiveKey();
-      window.addEventListener("scroll", this.onScroll)
+      window.addEventListener("scroll", throttle(this.onScroll, 16.7))
     }
   }
 
@@ -42,7 +47,7 @@ class NavBar extends PureComponent {
     let top  = 0;
     // scroll top
     const scrollTop = document.documentElement.scrollTop;
-    if (navHeight > window.innerHeight - 232) {
+    if (navHeight > window.innerHeight - 234) {
       if (scrollTop > document.body.clientHeight / 2) {
         top = - (scrollTop / (document.body.clientHeight / 2) - 1) * (navHeight - window.innerHeight + 234 + 166);
       } else {
@@ -88,11 +93,63 @@ class NavBar extends PureComponent {
     }
   }
 
+  renderWebNavList = () => {
+    const { tagList, language } = this.props;
+    const { sticky, top, activeKey } = this.state;
+    if (!(tagList || []).length) {
+      let length = +window.localStorage.getItem('tagListLength');
+      let skeletonList = getSkeletonList(length || 30);
+      return (
+        <Box
+          px={1}
+          display="flex"
+          flexDirection="column"
+          style={{ top }}>
+          {
+            (skeletonList).map((key, index) => (
+              <Box py={1} px={2} key={`${key}-${index}`}>
+                <Skeleton variant="text" width={80} />
+              </Box>
+            ))
+          }
+        </Box>
+      )
+    }
+    return (
+      <Box
+        px={1}
+        display="flex"
+        flexDirection="column"
+        id="NavBar"
+        className={classnames(styles.NavBar, sticky ? styles.NavBa_fixed : {})}
+        style={{ top }}>
+        {
+          (tagList || []).map(({ tag, tag_en }, index) => {
+            let tagName = language === 'zh' ? tag : tag_en;
+            return (
+              <Link
+                href={`#${tag_en}`}
+                key={tag_en}
+                className={classnames(styles.link, activeKey === encodeURI(tag_en) ? styles.link_active : {})}
+                color="textPrimary"
+                underline="none"
+                >
+                <Box px={2} py={1}>
+                  {tagName}
+                </Box>
+              </Link>
+            )
+          })
+        }
+      </Box>
+    )
+  }
+
   render() {
 
     const { tagList, language, drawerVisible, onClose } = this.props;
 
-    const { sticky, activeKey, top } = this.state;
+    const { activeKey } = this.state;
 
     return (
       <Box>
@@ -142,32 +199,7 @@ class NavBar extends PureComponent {
           </Drawer>
         </Hidden>
         <Hidden mdDown>
-          <Box
-            px={1}
-            display="flex"
-            flexDirection="column"
-            id="NavBar"
-            className={classnames(styles.NavBar, sticky ? styles.NavBa_fixed : {})}
-            style={{ top }}>
-            {
-              (tagList || []).map(({ tag, tag_en }, index) => {
-                let tagName = language === 'zh' ? tag : tag_en;
-                return (
-                  <Link
-                    href={`#${tag_en}`}
-                    key={tag_en}
-                    className={classnames(styles.link, activeKey === encodeURI(tag_en) ? styles.link_active : {})}
-                    color="textPrimary"
-                    underline="none"
-                    >
-                    <Box px={2} py={1}>
-                      {tagName}
-                    </Box>
-                  </Link>
-                )
-              })
-            }
-          </Box>
+          {this.renderWebNavList()}
         </Hidden>
       </Box>
     )

@@ -8,26 +8,19 @@ import {
 } from '@material-ui/core';
 import { Skeleton } from '@material-ui/lab';
 
+import { getSkeletonList } from '../services';
 
 class NavItemCard extends PureComponent {
 
-  getSkeletonList = (length = 8) => {
-    let list = [];
-    for (let i = 0; i < length; i++) {
-      list.push(i);
-    }
-    return list;
-  }
-
   /**
    * render nav category item
-   * @param  {String} tag navList.item_tag_en
+   * @param  {String} tag_en navList.item_tag_en
    * @return {ReactNode}
    */
   renderNavCard = (tag_en) => {
     const { navList, language } = this.props;
     if (!(navList || []).length) {
-      let skeletonList = this.getSkeletonList();
+      let skeletonList = getSkeletonList();
       return (
         (skeletonList).map((key, index) => (
           <Grid item xs={6} sm={4} md={3} key={`${key}-${index}`}>
@@ -128,6 +121,34 @@ class NavItemCard extends PureComponent {
   render() {
     console.log('NavItemCard');
     const { tagList, language } = this.props;
+    if (!(tagList || []).length) {
+      let skeletonList = getSkeletonList();
+      return skeletonList.map((key) => (
+        <Box
+          bgcolor="white"
+          borderRadius={16}
+          mb={2}
+          key={`${key}-index`}
+          px={{ xs: 2, sm: 2, md: 3 }}
+        >
+          <Box
+            py={2}
+            border={1}
+            borderTop={0}
+            borderRight={0}
+            borderLeft={0}
+            borderColor="grey.100"
+          >
+            <Skeleton variant="text" width={100} />
+          </Box>
+          <Box py={{ xs: 2, sm: 2, md: 3 }}>
+            <Grid container spacing={2}>
+              {this.renderNavCard(key)}
+            </Grid>
+          </Box>
+        </Box>
+      ))
+    }
     return (tagList || []).slice(1).map((item) => (
       <Box
         bgcolor="white"

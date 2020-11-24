@@ -5,21 +5,14 @@ import {
   Link,
 } from '@material-ui/core';
 
-class NavHotItemCard extends PureComponent {
+import { getSkeletonList } from '../services';
 
-  getSkeletonList = (length = 8) => {
-    let list = [];
-    for (let i = 0; i < length; i++) {
-      list.push(i);
-    }
-    return list;
-  }
+class NavHotItemCard extends PureComponent {
 
   render() {
     const { navList, tagList } = this.props;
-    if (!(tagList || []).length) return null;
-    if (!(navList || []).length) {
-      let skeletonList = this.getSkeletonList();
+    if (!(tagList || []).length || !(navList || []).length) {
+      let skeletonList = getSkeletonList();
       return (
         <Box mb={2} id={encodeURI((tagList[0] || {}).tag_en)}>
           <Grid container spacing={2}>
