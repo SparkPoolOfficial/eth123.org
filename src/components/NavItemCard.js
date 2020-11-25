@@ -8,6 +8,7 @@ import {
 } from '@material-ui/core';
 import { Skeleton } from '@material-ui/lab';
 
+import { imgHost } from '../services/config';
 import { getSkeletonList, trackEvent } from '../services';
 
 class NavItemCard extends PureComponent {
@@ -86,16 +87,20 @@ class NavItemCard extends PureComponent {
 
   // render nav item logo
   renderItemLogo = (item, language) => {
-    const { logo, name, name_en } = item;
+    const { logo, name, name_en, logoHeightAuto, logoWidthAuto } = item;
     const size = 30;
     if (logo) {
+      let logoSrc = logo;
+      if (logo.indexOf('http') < 0) {
+        logoSrc = `${imgHost}${logo}`;
+      }
       return (
         <Avatar
           style={{
-            height: item.logoHeightAuto ? 'auto' : size,
-            width: item.logoWidthAuto ? 'auto' : size
+            height: logoHeightAuto ? 'auto' : size,
+            width: logoWidthAuto ? 'auto' : size
           }}
-          src={item.logo}
+          src={logoSrc}
         />
       )
     }

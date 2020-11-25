@@ -17,9 +17,9 @@ import { Language, Menu } from '@material-ui/icons';
 import NavBar from './components/NavBar';
 import NavHotItemCard from './components/NavHotItemCard';
 import NavItemCard from './components/NavItemCard';
+import Logo from './components/Logo';
 
-import LogoImg from './assets/logo_title_new.svg';
-
+import { jsonHost } from './services/config';
 import { get } from './services/fetch';
 
 import './App.css';
@@ -64,7 +64,7 @@ class App extends React.Component {
 
   fetchTagList = async (navList) => {
     // const res = await get('/tagList.json');
-    const res = await get('https://expo-res.sparkpool.com/SparkPoolOfficial/eth123.org/main/tagList.json');
+    const res = await get(`${jsonHost}/main/tagList.json`);
     if (res && (res || []).length) {
       this.setState({
         tagList: res,
@@ -73,8 +73,8 @@ class App extends React.Component {
   }
 
   fetchNavList = async () => {
-    // const res = await get('/resource.json');
-    const res = await get('https://expo-res.sparkpool.com/SparkPoolOfficial/eth123.org/main/resource.json');
+    const res = await get('/resource.json');
+    // const res = await get(`${jsonHost}/main/resource.json`);
     if (res && (res || []).length) {
       this.setState({
         navList: res,
@@ -146,7 +146,7 @@ class App extends React.Component {
             alignItems="center"
             mb={{ xs: 2, sm: 3, md: 4 }}>
             <Box mb={{ xs: .5, sm: 1 }}>
-              <img src={LogoImg} alt="eth123" height={34}/>
+              <Logo />
             </Box>
             <Box>
               <Typography color="textSecondary">
