@@ -7,6 +7,7 @@ import {
   Typography,
 } from '@material-ui/core';
 import { Skeleton } from '@material-ui/lab';
+import LazyLoad from 'react-lazyload';
 
 import { imgHost } from '../services/config';
 import { getSkeletonList, trackEvent } from '../services';
@@ -89,25 +90,26 @@ class NavItemCard extends PureComponent {
   renderItemLogo = (item, language) => {
     const { logo, name, name_en, logoHeightAuto, logoWidthAuto } = item;
     const size = 30;
-    if (logo) {
-      let logoSrc = logo;
-      if (logo.indexOf('http') < 0) {
-        logoSrc = `${imgHost}${logo}`;
-      }
-      return (
+    let logoSrc = logo;
+    if (logo && logo.indexOf('http') < 0) {
+      logoSrc = `${imgHost}${logo}`;
+    }
+    return (
+      <LazyLoad
+        height={size}
+        style={{ width: size }}
+        once>
         <Avatar
+          alt={language === 'zh' ? name : (name_en || name)}
+          src={logoSrc}
           style={{
             height: logoHeightAuto ? 'auto' : size,
             width: logoWidthAuto ? 'auto' : size
           }}
-          src={logoSrc}
-        />
-      )
-    }
-    return (
-      <Avatar style={{ height: size, width: size }}>
-        {(language === 'zh' ? name : (name_en || name)).slice(0, 1)}
-      </Avatar>
+        >
+          {(language === 'zh' ? name : (name_en || name)).slice(0, 1)}
+        </Avatar>
+      </LazyLoad>
     )
   }
 
@@ -127,7 +129,7 @@ class NavItemCard extends PureComponent {
   }
 
   render() {
-    console.log('NavItemCard');
+    // console.log('NavItemCard');
     const { tagList, language } = this.props;
     if (!(tagList || []).length) {
       let skeletonList = getSkeletonList();

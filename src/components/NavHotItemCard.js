@@ -32,7 +32,7 @@ class NavHotItemCard extends PureComponent {
         </Box>
       )
     }
-    console.log('NavHotItemCard');
+    // console.log('NavHotItemCard');
     return (
       <Box mb={2} id={encodeURI((tagList[0] || {}).tag_en)}>
         <Grid container spacing={2}>
