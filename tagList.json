@@ -8,8 +8,16 @@
       "tag_en":"Community"
    },
    {
+      "tag":"钱包",
+      "tag_en":"Wallet"
+   },
+   {
       "tag":"浏览器",
       "tag_en":"Explorer"
+   },
+   {
+      "tag":"资讯",
+      "tag_en":"Information"
    },
    {
       "tag":"Eth2 资源",
@@ -64,10 +72,6 @@
       "tag_en":"Tool"
    },
    {
-      "tag":"钱包",
-      "tag_en":"Wallet"
-   },
-   {
       "tag":"ETH1 客户端",
       "tag_en":"ETH1 Client"
    },
@@ -90,10 +94,6 @@
    {
       "tag":"基础设施",
       "tag_en":"Infrastructure"
-   },
-   {
-      "tag":"资讯",
-      "tag_en":"Information"
    },
    {
       "tag":"博客",
