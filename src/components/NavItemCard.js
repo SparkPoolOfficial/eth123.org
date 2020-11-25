@@ -61,24 +61,17 @@ class NavItemCard extends PureComponent {
                 {this.renderItemLogo(item, language)}
               </Box>
               <Box>
-                <Box
-                  display="flex"
-                  flexDirection="row"
-                  alignItems="center">
-                  <Typography
-                    variant="body1"
-                    className="cardItem_title"
-                    style={{ fontWeight: 500 }}>
-                    {language === 'zh' ? item.name : (item.name_en || item.name)}
-                  </Typography>
-                </Box>
-                <Box style={{ lineHeight: '20px' }}>
-                  <Typography
-                    variant="caption"
-                    style={{ color: '#999', wordBreak: 'break-all' }}>
-                    {this.renderDesc(item, language)}
-                  </Typography>
-                </Box>
+                <Typography
+                  variant="body1"
+                  className="cardItem_title"
+                  style={{ fontWeight: 500 }}>
+                  {language === 'zh' ? item.name : (item.name_en || item.name)}
+                </Typography>
+                <Typography
+                  variant="caption"
+                  style={{ color: '#999', wordBreak: 'break-all' }}>
+                  {this.renderDesc(item, language)}
+                </Typography>
               </Box>
             </Box>
           </Link>
@@ -103,6 +96,10 @@ class NavItemCard extends PureComponent {
           alt={language === 'zh' ? name : (name_en || name)}
           src={logoSrc}
           style={{
+            height: logoHeightAuto ? 'auto' : size,
+            width: logoWidthAuto ? 'auto' : size
+          }}
+          imgProps={{
             height: logoHeightAuto ? 'auto' : size,
             width: logoWidthAuto ? 'auto' : size
           }}

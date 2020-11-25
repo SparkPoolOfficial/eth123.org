@@ -132,11 +132,8 @@ class NavBar extends PureComponent {
                 key={tag_en}
                 className={classnames(styles.link, activeKey === encodeURI(tag_en) ? styles.link_active : {})}
                 color="textPrimary"
-                underline="none"
-                >
-                <Box px={2} py={1}>
-                  {tagName}
-                </Box>
+                underline="none">
+                {tagName}
               </Link>
             )
           })
@@ -152,7 +149,7 @@ class NavBar extends PureComponent {
     const { activeKey } = this.state;
 
     return (
-      <Box>
+      <>
         <Hidden lgUp>
           <Drawer
             open={drawerVisible}
@@ -201,7 +198,7 @@ class NavBar extends PureComponent {
         <Hidden mdDown>
           {this.renderWebNavList()}
         </Hidden>
-      </Box>
+      </>
     )
   }
 

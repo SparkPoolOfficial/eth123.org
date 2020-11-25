@@ -5,6 +5,7 @@
 
 .link {
   position: relative;
+  padding: 8px 16px;
 }
 
 .link:hover {
@@ -22,6 +23,7 @@
   content: '';
   position: absolute;
   top: 50%;
+  left: 0;
   margin-top: -6px;
   height: 12px;
   width: 4px;
