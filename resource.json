@@ -22,28 +22,6 @@
       "image":"https://sparkpool-expo.oss-cn-shanghai.aliyuncs.com/imgs/hot/etherscan_1.png"
    },
    {
-      "name":"GasNow",
-      "name_en":"",
-      "desc":"",
-      "desc_en":"",
-      "website":"https://www.gasnow.org/",
-      "tag":"热门推荐",
-      "tag_en":"Hot",
-      "logo":"https://sparkpool-expo.oss-cn-shanghai.aliyuncs.com/imgs/tool/gasnow.jpg",
-      "image":"https://sparkpool-expo.oss-cn-shanghai.aliyuncs.com/imgs/hot/gasnow.png"
-   },
-   {
-      "name":"Maker",
-      "name_en":"",
-      "desc":"",
-      "desc_en":"",
-      "website":"https://makerdao.com/",
-      "tag":"热门推荐",
-      "tag_en":"Hot",
-      "logo":"https://sparkpool-expo.oss-cn-shanghai.aliyuncs.com/imgs/Maker-1588230450967.jpg",
-      "image":"https://sparkpool-expo.oss-cn-shanghai.aliyuncs.com/imgs/hot/maker_1.png"
-   },
-   {
       "name":"Uniswap",
       "name_en":"",
       "desc":"",
@@ -77,6 +55,17 @@
       "image":"https://sparkpool-expo.oss-cn-shanghai.aliyuncs.com/imgs/hot/metamask_1.png"
    },
    {
+      "name":"GasNow",
+      "name_en":"",
+      "desc":"",
+      "desc_en":"",
+      "website":"https://www.gasnow.org/",
+      "tag":"热门推荐",
+      "tag_en":"Hot",
+      "logo":"https://sparkpool-expo.oss-cn-shanghai.aliyuncs.com/imgs/tool/gasnow.jpg",
+      "image":"https://sparkpool-expo.oss-cn-shanghai.aliyuncs.com/imgs/hot/gasnow.png"
+   },
+   {
       "name":"以太坊 Reddit",
       "name_en":"Reddit",
       "desc":"",
@@ -86,6 +75,17 @@
       "tag_en":"Hot",
       "logo":"https://sparkpool-expo.oss-cn-shanghai.aliyuncs.com/imgs/redditlogo.png",
       "image":"https://sparkpool-expo.oss-cn-shanghai.aliyuncs.com/imgs/hot/reddit.png"
+   },
+   {
+      "name":"每周以太坊",
+      "name_en":"Week in Ethereum News",
+      "desc":"",
+      "desc_en":"",
+      "website":"http://weekinethereumnews.com/",
+      "tag":"热门推荐",
+      "tag_en":"Hot",
+      "logo":"https://sparkpool-expo.oss-cn-shanghai.aliyuncs.com/imgs/blog/weekineth.jpg",
+      "image":"https://sparkpool-expo.oss-cn-shanghai.aliyuncs.com/imgs/hot/Week%20in%20Ethereum%20New.png"
    },
    {
       "name":"以太坊 Reddit",
@@ -436,7 +436,7 @@
       "website":"https://sushiswap.org/",
       "tag":"去中心化交易所",
       "tag_en":"DEX",
-      "logo":"https://sparkpool-expo.oss-cn-shanghai.aliyuncs.com/imgs/sushi.png",
+      "logo":"https://sparkpool-expo.oss-cn-shanghai.aliyuncs.com/imgs/pic/sushi.png",
       "image":""
    },
    {
@@ -1195,7 +1195,7 @@
       "website":"https://stablecoinindex.com/",
       "tag":"数据分析",
       "tag_en":"Data Analysis",
-      "logo":"https://sparkpool-expo.oss-cn-shanghai.aliyuncs.com/imgs/Data%20Analysis/stablecoinindex.jpeg",
+      "logo":"https://sparkpool-expo.oss-cn-shanghai.aliyuncs.com/imgs/pic/stablecoinindex.jpeg",
       "image":""
    },
    {
@@ -1525,7 +1525,7 @@
       "website":"https://metamask.io/",
       "tag":"钱包",
       "tag_en":"Wallet",
-      "logo":"https://sparkpool-expo.oss-cn-shanghai.aliyuncs.com/imgs/metamask.png",
+      "logo":"https://sparkpool-expo.oss-cn-shanghai.aliyuncs.com/imgs/pic/metamask.png",
       "image":""
    },
    {
@@ -2229,7 +2229,7 @@
       "website":"http://bankless.substack.com/",
       "tag":"资讯",
       "tag_en":"Information",
-      "logo":"https://sparkpool-expo.oss-cn-shanghai.aliyuncs.com/imgs/blog/bankless.png",
+      "logo":"https://sparkpool-expo.oss-cn-shanghai.aliyuncs.com/imgs/pic/bankless.png",
       "image":""
    },
    {
@@ -2350,7 +2350,7 @@
       "website":"https://samczsun.com/",
       "tag":"博客",
       "tag_en":"Blog",
-      "logo":"https://sparkpool-expo.oss-cn-shanghai.aliyuncs.com/imgs/blog/samczsun.png",
+      "logo":"https://sparkpool-expo.oss-cn-shanghai.aliyuncs.com/imgs/pic/samczsun.jpg",
       "image":""
    },
    {
@@ -2361,7 +2361,7 @@
       "website":"https://blog.ethereum.org/",
       "tag":"博客",
       "tag_en":"Blog",
-      "logo":"https://sparkpool-expo.oss-cn-shanghai.aliyuncs.com/imgs/ethblog.png",
+      "logo":"https://sparkpool-expo.oss-cn-shanghai.aliyuncs.com/imgs/pic/ethblog.png",
       "image":""
    },
    {
