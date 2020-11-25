@@ -73,8 +73,8 @@ class App extends React.Component {
   }
 
   fetchNavList = async () => {
-    const res = await get('/resource.json');
-    // const res = await get(`${jsonHost}/main/resource.json`);
+    // const res = await get('/resource.json');
+    const res = await get(`${jsonHost}/main/resource.json`);
     if (res && (res || []).length) {
       this.setState({
         navList: res,
