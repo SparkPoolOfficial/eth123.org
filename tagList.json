@@ -20,16 +20,16 @@
       "tag_en":"Information"
    },
    {
-      "tag":"Eth2 资源",
-      "tag_en":"Eth2 Resources"
-   },
-   {
       "tag":"行情",
       "tag_en":"Price"
    },
    {
-      "tag":"中心化交易所",
-      "tag_en":"CEX"
+      "tag":"交易所",
+      "tag_en":"Exchange"
+   },
+   {
+      "tag":"Eth2 资源",
+      "tag_en":"Eth2 Resources"
    },
    {
       "tag":"去中心化交易所",
@@ -100,12 +100,12 @@
       "tag_en":"Security"
    },
    {
-      "tag":"推特",
-      "tag_en":"Twitter"
-   },
-   {
       "tag":"基础设施",
       "tag_en":"Infrastructure"
+   },
+   {
+      "tag":"推特",
+      "tag_en":"Twitter"
    },
    {
       "tag":"博客",
