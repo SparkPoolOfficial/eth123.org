@@ -583,6 +583,17 @@
       "image":""
    },
    {
+      "name":"Ethereumprice",
+      "name_en":"",
+      "desc":"",
+      "desc_en":"",
+      "website":"https://ethereumprice.org/",
+      "tag":"行情",
+      "tag_en":"Price",
+      "logo":"/imgs/CEX/Ethereumprice.jpg",
+      "image":""
+   },
+   {
       "name":"CoinMarketCap",
       "name_en":"",
       "desc":"",
