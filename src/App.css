@@ -2,10 +2,6 @@
   width: 1042px;
 }
 
-.hotCard > img {
-  height: 100%;
-}
-
 .cardItem:hover .cardItem_title {
   color: #ff7828;
 }
@@ -47,8 +43,12 @@
 }
 
 @media screen and (min-width: 600px) {
-  .skeletonHotCard, .hotCard, .hotCard > img {
+  .skeletonHotCard, .hotCard {
     height: 92px;
+  }
+  .hotCard > img {
+    height: 92px;
+    width: 195px;
   }
   .hotCard:hover {
     box-shadow: 0px 8px 32px 0px #CDD3DF;
@@ -59,7 +59,11 @@
 }
 
 @media screen and (max-width: 600px) {
-  .skeletonHotCard, .hotCard, .hotCard > img {
+  .skeletonHotCard, .hotCard {
     height: 78px;
+  }
+  .hotCard > img {
+    height: 78px;
+    width: 165.31px;
   }
 }
