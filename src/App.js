@@ -58,8 +58,18 @@ class App extends React.Component {
   }
 
   componentDidMount() {
+    this.initPageLanguage();
     this.fetchTagList();
     this.fetchNavList();
+  }
+
+  initPageLanguage = () => {
+    const lng = window.localStorage.getItem('i18nextLng');
+    if (lng === 'en') {
+      this.setState({
+        language: 'en',
+      });
+    }
   }
 
   fetchTagList = async (navList) => {
@@ -127,9 +137,12 @@ class App extends React.Component {
               disableElevation={true}
               variant="outlined"
               onClick={() => {
+                const lng = language === 'zh' ? 'en' : 'zh';
+                window.localStorage.setItem('i18nextLng', lng);
+                document.cookie = `i18next=${lng};path=/;domain=.eth123.org`;
                 this.setState({
-                  language: language === 'zh' ? 'en' : 'zh',
-                })
+                  language: lng,
+                });
               }}
               size="small"
               startIcon={<Language />}
