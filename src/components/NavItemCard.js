@@ -9,8 +9,11 @@ import {
 import { Skeleton } from '@material-ui/lab';
 import LazyLoad from 'react-lazyload';
 
-import { imgHost } from '../services/config';
-import { getSkeletonList, trackEvent } from '../services';
+import {
+  getSkeletonList,
+  trackEvent,
+  formatWebpImageSrc,
+} from '../services';
 
 class NavItemCard extends PureComponent {
 
@@ -83,10 +86,6 @@ class NavItemCard extends PureComponent {
   renderItemLogo = (item, language) => {
     const { logo, name, name_en, logoHeightAuto, logoWidthAuto } = item;
     const size = 30;
-    let logoSrc = logo;
-    if (logo && logo.indexOf('http') < 0) {
-      logoSrc = `${imgHost}${logo}`;
-    }
     return (
       <LazyLoad
         height={size}
@@ -94,7 +93,7 @@ class NavItemCard extends PureComponent {
         once>
         <Avatar
           alt={language === 'zh' ? name : (name_en || name)}
-          src={logoSrc}
+          src={formatWebpImageSrc(logo)}
           style={{
             height: logoHeightAuto ? 'auto' : size,
             width: logoWidthAuto ? 'auto' : size

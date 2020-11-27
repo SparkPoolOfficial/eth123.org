@@ -4,7 +4,6 @@ import {
   Container,
   Box,
   Typography,
-  Link,
   Button,
   Hidden,
 } from '@material-ui/core';
@@ -18,9 +17,11 @@ import NavBar from './components/NavBar';
 import NavHotItemCard from './components/NavHotItemCard';
 import NavItemCard from './components/NavItemCard';
 import Logo from './components/Logo';
+import Footer from './components/Footer';
 
 import { jsonHost } from './services/config';
 import { get } from './services/fetch';
+import { getDefaultLanguage } from './services';
 
 import './App.css';
 
@@ -33,7 +34,7 @@ const theme = createMuiTheme({
   },
 });
 
-const translation = {
+const translations = {
   zh: {
     subTitle: '以太坊生态资源导航',
     more: '一起发现更多新产品',
@@ -49,27 +50,18 @@ const translation = {
 class App extends React.Component {
 
   state = {
-    footerVisible: false,
     tagList: [],
     navList: [],
 
-    language: 'zh',
+    language: getDefaultLanguage(),
     drawerVisible: false,
+    footerVisible: false,
   }
 
   componentDidMount() {
-    this.initPageLanguage();
+    // this.initPageLanguage();
     this.fetchTagList();
     this.fetchNavList();
-  }
-
-  initPageLanguage = () => {
-    const lng = window.localStorage.getItem('i18nextLng');
-    if (lng === 'en') {
-      this.setState({
-        language: 'en',
-      });
-    }
   }
 
   fetchTagList = async (navList) => {
@@ -84,8 +76,10 @@ class App extends React.Component {
 
   fetchNavList = async () => {
     // const res = await get('/resource.json');
+    // let startTime = new Date().getTime();
     const res = await get(`${jsonHost}/main/resource.json`);
     if (res && (res || []).length) {
+      // console.log('fetch resource times:', new Date().getTime() - startTime);
       this.setState({
         navList: res,
         footerVisible: true,
@@ -95,7 +89,7 @@ class App extends React.Component {
 
   translate = (key) => {
     const { language } = this.state;
-    return translation[language][key];
+    return translations[language][key];
   }
 
   render() {
@@ -140,9 +134,7 @@ class App extends React.Component {
                 const lng = language === 'zh' ? 'en' : 'zh';
                 window.localStorage.setItem('i18nextLng', lng);
                 document.cookie = `i18next=${lng};path=/;domain=.eth123.org`;
-                this.setState({
-                  language: lng,
-                });
+                this.setState({ language: lng });
               }}
               size="small"
               startIcon={<Language />}
@@ -194,47 +186,10 @@ class App extends React.Component {
             </Hidden>
           </Box>
         </Container>
-        {
-          footerVisible ? (
-            <Box>
-              <Box
-                display="flex"
-                flexDirection="column"
-                alignItems="center"
-                className="footer"
-                py={{ xs: 3, sm: 3, md: 4 }}>
-                <Box mb={{ xs: 1.25, sm: 2, md: 3 }}>
-                  <Typography variant="h5" className="footer_title">
-                    {t('more')}
-                  </Typography>
-                </Box>
-                <Button
-                  variant="contained"
-                  className="submitBtn"
-                  color="primary"
-                  style={{ textTransform: 'none' }}
-                  onClick={() => {
-                    window.open('https://github.com/SparkPoolOfficial/eth123.org/issues');
-                  }}
-                  >
-                  {t('submit')}
-                </Button>
-              </Box>
-              <Box
-                display="flex"
-                flexDirection="row"
-                justifyContent="center"
-                py={{ xs: 1, sm: 2 }}>
-                <Box>Sponsored By&nbsp;</Box>
-                <Box color="#ff7828">
-                  <Link href="https://www.sparkpool.com" underline="none">
-                    SparkPool
-                  </Link>
-                </Box>
-              </Box>
-            </Box>
-          ) : null
-        }
+        <Footer
+          footerVisible={footerVisible}
+          t={t}
+        />
       </ThemeProvider>
     );
 

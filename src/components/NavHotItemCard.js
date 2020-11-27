@@ -5,8 +5,11 @@ import {
   Link,
 } from '@material-ui/core';
 
-import { imgHost } from '../services/config';
-import { getSkeletonList, trackEvent } from '../services';
+import {
+  getSkeletonList,
+  trackEvent,
+  formatWebpImageSrc,
+} from '../services';
 
 class NavHotItemCard extends PureComponent {
 
@@ -60,7 +63,7 @@ class NavHotItemCard extends PureComponent {
                       borderRadius={8}
                     >
                       <img
-                        src={(item.image || '').indexOf('http') > -1 ? item.image : `${imgHost}${item.image}`}
+                        src={formatWebpImageSrc(item.image)}
                         alt=""
                       />
                     </Box>
