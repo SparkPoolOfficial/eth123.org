@@ -42,6 +42,21 @@
   border-radius: 35px!important;
 }
 
+.toggleBtnWrap {
+  height: 100%;
+}
+
+.toggleBtn > svg {
+  color: #cfcfcf;
+}
+
+.toggleBtn:hover {
+  background-color: #ff7828;
+}
+.toggleBtn:hover > svg {
+  color: #fff;
+}
+
 @media screen and (min-width: 600px) {
   .skeletonHotCard, .hotCard {
     height: 92px;
@@ -56,6 +71,12 @@
   .cardItem:hover {
     background-color: #f8f8f8;
   }
+  .toggleBtn {
+    width: 48px;
+    height: 48px;
+    cursor: pointer;
+    background-color: #f8f8f8
+  }
 }
 
 @media screen and (max-width: 600px) {
@@ -65,5 +86,11 @@
   .hotCard > img {
     height: 78px;
     width: 165.31px;
+  }
+  .toggleBtn {
+    width: 100%;
+    height: 48px;
+    cursor: pointer;
+    background-color: #f8f8f8
   }
 }

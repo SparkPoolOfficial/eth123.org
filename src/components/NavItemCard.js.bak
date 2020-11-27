@@ -6,8 +6,10 @@ import {
   Avatar,
   Typography,
 } from '@material-ui/core';
+import { KeyboardArrowDown } from '@material-ui/icons';
+
 import { Skeleton } from '@material-ui/lab';
-import LazyLoad from 'react-lazyload';
+import LazyLoad, { forceCheck } from 'react-lazyload';
 
 import {
   getSkeletonList,
@@ -16,6 +18,27 @@ import {
 } from '../services';
 
 class NavItemCard extends PureComponent {
+
+  state = {
+    expandList: [],
+  }
+
+  handleExpand = (tag) => {
+    const { expandList } = this.state;
+    let back = [].concat(expandList);
+    let index = expandList.indexOf(tag);
+    if (index > -1) {
+      back.splice(index, 1);
+    } else {
+      back.push(tag);
+    }
+    // setTimeout(() => forceCheck(), 0);
+    this.setState({
+      expandList: back,
+    }, () => {
+      forceCheck();
+    });
+  }
 
   /**
    * render nav category item
@@ -42,9 +65,9 @@ class NavItemCard extends PureComponent {
         ))
       )
     }
-    return (navList || [])
-      .filter((item) => item.tag_en.indexOf(tag_en) > -1)
-      .map((item, index) => (
+    const list = (navList || []).filter((item) => item.tag_en.indexOf(tag_en) > -1);
+    if (list.length <= 8) {
+      return list.map((item, index) => (
         <Grid item xs={6} sm={4} md={3} key={index}>
           <Link
             color="textPrimary"
@@ -80,10 +103,88 @@ class NavItemCard extends PureComponent {
           </Link>
         </Grid>
       ));
+    }
+    return this.renderExpandNavItem(tag_en);
+  }
+
+  renderExpandNavItem = (tag_en) => {
+    const { navList, language } = this.props;
+    const { expandList } = this.state;
+    const list = (navList || []).filter((item) => item.tag_en.indexOf(tag_en) > -1);
+    let node = [];
+    console.log(115, list);
+    node = list.map((item, index) => (
+      <Grid
+        item
+        xs={6}
+        sm={4}
+        md={3}
+        style={{ display: index >= 7 && expandList.indexOf(tag_en) < 0 ? 'none' : 'initial' }}
+        key={index}>
+        <Link
+          color="textPrimary"
+          href={`${item.website}?utm_resource=eth123.org`}
+          target="_blank"
+          underline='none'
+          onClick={() => {
+            trackEvent(item.tag_en, (item.name_en || item.name));
+          }}>
+          <Box
+            className='cardItem'
+            display="flex"
+            flexDirection="row"
+            p={{ xs: 0, sm: 1 }}
+            borderRadius={8}>
+            <Box mr={{ xs: 1, sm: 1 }}>
+              {this.renderItemLogo(item, language, index >= 7)}
+            </Box>
+            <Box>
+              <Typography
+                variant="body1"
+                className="cardItem_title"
+                style={{ fontWeight: 500 }}>
+                {language === 'zh' ? item.name : (item.name_en || item.name)}
+              </Typography>
+              <Typography
+                variant="caption"
+                style={{ color: '#999', wordBreak: 'break-all' }}>
+                {this.renderDesc(item, language)}
+              </Typography>
+            </Box>
+          </Box>
+        </Link>
+      </Grid>
+    ));
+    if (expandList.indexOf(tag_en) < 0) {
+      node.push(
+        <Grid item xs={6} sm={4} md={3} key="toggleBtnGrid">
+          <Box
+            display="flex"
+            flexDirection="column"
+            justifyContent="center"
+            alignItems="center"
+            className="toggleBtnWrap">
+            <Box
+              display="flex"
+              flexDirection="column"
+              justifyContent="center"
+              alignItems="center"
+              className="toggleBtn"
+              borderRadius={4}
+              onClick={() => {
+                this.handleExpand(tag_en);
+              }}>
+              <KeyboardArrowDown />
+            </Box>
+          </Box>
+        </Grid>
+      );
+    }
+    return node;
   }
 
   // render nav item logo
-  renderItemLogo = (item, language) => {
+  renderItemLogo = (item, language, focus = false) => {
     const { logo, name, name_en, logoHeightAuto, logoWidthAuto } = item;
     const size = 30;
     return (
