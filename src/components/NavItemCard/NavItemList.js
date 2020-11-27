@@ -2,11 +2,15 @@ import React, { PureComponent } from 'react';
 
 import NavItem from './NavItem';
 import NavExpandItem from './NavExpandItem';
+import ItemSkeleton from './ItemSkeleton';
 
 class NavItemList extends PureComponent {
 
   render() {
     const { tag, navList, language } = this.props;
+    if (!(navList || []).length) {
+      return <ItemSkeleton />
+    }
     const list = (navList || []).filter((item) => item.tag_en.indexOf(tag) > -1);
     let node = [];
     let len = list.length <= 8 ? 8 : 7;
@@ -18,7 +22,6 @@ class NavItemList extends PureComponent {
       />
     ));
     if (list.length > 8) {
-      console.log(21, list);
       node.push(
         <NavExpandItem
           key="NavExpandItem"
