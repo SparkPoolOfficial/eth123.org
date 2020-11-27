@@ -20,8 +20,12 @@
       "tag_en":"Information"
    },
    {
-      "tag":"Eth2 资源",
-      "tag_en":"Eth2 Resources"
+      "tag":"行情",
+      "tag_en":"Price"
+   },
+   {
+      "tag":"交易所",
+      "tag_en":"Exchange"
    },
    {
       "tag":"去中心化交易所",
@@ -84,6 +88,10 @@
       "tag_en":"Documentation"
    },
    {
+      "tag":"Eth2 资源",
+      "tag_en":"Eth2 Resources"
+   },
+   {
       "tag":"开发者",
       "tag_en":"Developer Resources"
    },
@@ -96,12 +104,20 @@
       "tag_en":"Infrastructure"
    },
    {
+      "tag":"推特",
+      "tag_en":"Twitter"
+   },
+   {
       "tag":"博客",
       "tag_en":"Blog"
    },
    {
       "tag":"播客",
       "tag_en":"Podcast"
+   },
+   {
+      "tag":"会议",
+      "tag_en":"Conference"
    },
    {
       "tag":"预言机",
@@ -122,6 +138,10 @@
    {
       "tag":"其它应用",
       "tag_en":"Other dApps"
+   },
+   {
+      "tag":"投资机构",
+      "tag_en":"Captial/Tokenfund"
    },
    {
       "tag":"其它",
