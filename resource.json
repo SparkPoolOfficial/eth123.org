@@ -2354,6 +2354,17 @@
       "image":""
    },
    {
+      "name":"OpenZeppelin",
+      "name_en":"",
+      "desc":"",
+      "desc_en":"",
+      "website":"https://openzeppelin.com/",
+      "tag":"开发者",
+      "tag_en":"Developer Resources",
+      "logo":"/imgs/Developer%20Resources/openzeppelin.jpg",
+      "image":""
+   },
+   {
       "name":"Embark",
       "name_en":"",
       "desc":"",
