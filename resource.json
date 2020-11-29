@@ -1364,6 +1364,17 @@
       "image":""
    },
    {
+      "name":"Dappquery",
+      "name_en":"",
+      "desc":"",
+      "desc_en":"",
+      "website":"https://dappquery.com/",
+      "tag":"数据分析",
+      "tag_en":"Data Analysis",
+      "logo":"https://dappquery.s3.amazonaws.com/assets/img/icon_192.png",
+      "image":""
+   },
+   {
       "name":"Messari",
       "name_en":"",
       "desc":"",
