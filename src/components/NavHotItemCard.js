@@ -14,7 +14,9 @@ import {
 class NavHotItemCard extends PureComponent {
 
   render() {
-    const { navList, tagList } = this.props;
+
+    const { navList, tagList, language } = this.props;
+
     if (!(tagList || []).length || !(navList || []).length) {
       let skeletonList = getSkeletonList();
       return (
@@ -35,6 +37,8 @@ class NavHotItemCard extends PureComponent {
         </Box>
       )
     }
+
+
     // console.log('NavHotItemCard');
     return (
       <Box mb={2} id={encodeURI((tagList[0] || {}).tag_en)}>
@@ -46,7 +50,7 @@ class NavHotItemCard extends PureComponent {
                 <Grid item xs={6} sm={4} md={3} key={`Hot-${index}`}>
                   <Link
                     color="textPrimary"
-                    href={`${item.website}?utm_resource=eth123.org`}
+                    href={`${language === 'zh' ? item.url : item.url_en}?utm_resource=eth123.org`}
                     target="_blank"
                     underline='none'
                     onClick={() => {

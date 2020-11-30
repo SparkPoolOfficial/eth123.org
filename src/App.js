@@ -174,6 +174,7 @@ class App extends React.Component {
               <NavHotItemCard
                 navList={navList}
                 tagList={tagList}
+                language={language}
               />
               <NavItemCard
                 navList={navList}
