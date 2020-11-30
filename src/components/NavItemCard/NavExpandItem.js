@@ -1,11 +1,9 @@
 import React, { useState } from 'react';
-import {
-  Grid,
-  Box,
-} from '@material-ui/core';
+import { Grid } from '@material-ui/core';
 import { KeyboardArrowDown } from '@material-ui/icons';
 
 import NavItem from './NavItem';
+import Box from '../Box';
 
 const NavExpandItem = ({
   list,
@@ -21,7 +19,6 @@ const NavExpandItem = ({
           display="flex"
           flexDirection="column"
           justifyContent="center"
-          // alignItems="center"
           className="toggleBtnWrap">
           <Box
             display="flex"

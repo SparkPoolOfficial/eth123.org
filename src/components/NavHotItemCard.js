@@ -1,10 +1,10 @@
 import React, { PureComponent } from 'react';
 import {
   Grid,
-  Box,
   Link,
 } from '@material-ui/core';
 
+import Box from './Box';
 import {
   getSkeletonList,
   trackEvent,
@@ -20,27 +20,29 @@ class NavHotItemCard extends PureComponent {
     if (!(tagList || []).length || !(navList || []).length) {
       let skeletonList = getSkeletonList();
       return (
-        <Box mb={2} id={encodeURI((tagList[0] || {}).tag_en)}>
+        <div id={encodeURI((tagList[0] || {}).tag_en)} style={{ marginBottom: 16 }}>
           <Grid container spacing={2}>
             {
               (skeletonList).map((key, index) => (
                 <Grid item xs={6} sm={4} md={3} key={`${key}-${index}`}>
-                  <Box
-                    bgcolor="white"
-                    borderRadius={8}
+                  <div
                     className="skeletonHotCard"
+                    style={{
+                      backgroundColor: '#fff',
+                      borderRadius: 8,
+                    }}
                   />
                 </Grid>
               ))
             }
           </Grid>
-        </Box>
+        </div>
       )
     }
 
     // console.log('NavHotItemCard');
     return (
-      <Box mb={2} id={encodeURI((tagList[0] || {}).tag_en)}>
+      <div id={encodeURI((tagList[0] || {}).tag_en)} style={{ marginBottom: 16 }}>
         <Grid container spacing={2}>
           {
             (navList || [])
@@ -56,15 +58,15 @@ class NavHotItemCard extends PureComponent {
                       trackEvent(item.tag_en, (item.name_en || item.name));
                     }}>
                     <Box
-                      bgcolor="white"
                       display="flex"
                       flexDirection="column"
-                      alignItems="center"
                       justifyContent="center"
-                      className="hotCard"
-                      px={2}
+                      alignItems="center"
+                      pt={2}
+                      pb={2}
                       borderRadius={8}
-                    >
+                      backgroundColor="#fff"
+                      className="hotCard">
                       <img
                         src={formatWebpImageSrc(item.image)}
                         alt=""
@@ -75,7 +77,7 @@ class NavHotItemCard extends PureComponent {
               ))
           }
         </Grid>
-      </Box>
+      </div>
     );
   }
 

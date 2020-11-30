@@ -1,12 +1,15 @@
 import React from 'react';
 import {
   Grid,
-  Box,
   Link,
   Avatar,
   Typography,
 } from '@material-ui/core';
 import LazyLoad from 'react-lazyload';
+import classnames from 'classnames';
+
+import Box from '../Box';
+import BoxStyles from '../Box.module.css';
 
 import {
   trackEvent,
@@ -58,12 +61,11 @@ const NavItem = ({
           trackEvent(tag_en, (name_en || name));
         }}>
         <Box
-          className='cardItem'
           display="flex"
           flexDirection="row"
-          p={{ xs: 0, sm: 1 }}
+          classnames={classnames("cardItem", BoxStyles.cardItem)}
           borderRadius={8}>
-          <Box mr={{ xs: 1, sm: 1 }}>
+          <Box mr={1}>
             <LazyLoad
               height={size}
               style={{ width: size }}

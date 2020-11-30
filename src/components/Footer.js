@@ -1,10 +1,14 @@
 import React, { PureComponent } from 'react';
 import {
-  Box,
+  // Box,
   Typography,
   Button,
   Link,
 } from '@material-ui/core';
+import classnames from 'classnames';
+
+import Box from './Box';
+import BoxStyle from './Box.module.css';
 
 class Footer extends PureComponent {
 
@@ -17,14 +21,13 @@ class Footer extends PureComponent {
     if (!footerVisible) return null;
 
     return (
-      <Box>
+      <>
         <Box
           display="flex"
           flexDirection="column"
           alignItems="center"
-          className="footer"
-          py={{ xs: 3, sm: 3, md: 4 }}>
-          <Box mb={{ xs: 1.25, sm: 2, md: 3 }}>
+          className={classnames("footer", BoxStyle.footer)}>
+          <Box className={BoxStyle.footer_title}>
             <Typography variant="h5" className="footer_title">
               {t('more')}
             </Typography>
@@ -45,15 +48,15 @@ class Footer extends PureComponent {
           display="flex"
           flexDirection="row"
           justifyContent="center"
-          py={{ xs: 1, sm: 2 }}>
-          <Box>Sponsored By&nbsp;</Box>
-          <Box color="#ff7828">
+          className={BoxStyle.footer_sponsored}>
+          <div>Sponsored By&nbsp;</div>
+          <div style={{ color: "#ff7828" }}>
             <Link href="https://www.sparkpool.com" underline="none">
               SparkPool
             </Link>
-          </Box>
+          </div>
         </Box>
-      </Box>
+      </>
     )
 
   }

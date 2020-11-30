@@ -1,7 +1,6 @@
 import React, { PureComponent } from 'react';
 import {
   Hidden,
-  Box,
   Link,
   Drawer,
   Divider,
@@ -10,6 +9,7 @@ import { Skeleton } from '@material-ui/lab';
 import classnames from 'classnames';
 import throttle from 'lodash.throttle';
 
+import Box from '../Box';
 import LogoImg from '../../assets/logo_title_new.svg';
 import styles from './styles.module.css';
 import { getSkeletonList } from '../../services';
@@ -101,13 +101,19 @@ class NavBar extends PureComponent {
       let skeletonList = getSkeletonList(length || 30);
       return (
         <Box
-          px={1}
           display="flex"
           flexDirection="column"
+          pl={1}
+          pr={1}
           style={{ top }}>
           {
             (skeletonList).map((key, index) => (
-              <Box py={1} px={2} key={`${key}-${index}`}>
+              <Box
+                pt={1}
+                pr={2}
+                pb={1}
+                pl={2}
+                key={`${key}-${index}`}>
                 <Skeleton variant="text" width={80} />
               </Box>
             ))
@@ -117,7 +123,8 @@ class NavBar extends PureComponent {
     }
     return (
       <Box
-        px={1}
+        pl={1}
+        pr={1}
         display="flex"
         flexDirection="column"
         id="NavBar"
@@ -184,7 +191,11 @@ class NavBar extends PureComponent {
                         className={classnames(styles.drawer_link, activeKey === encodeURI(tag_en) ? styles.drawer_link_active : {})}
                         color="textPrimary"
                         underline="none">
-                        <Box px={4} py={1}>
+                        <Box
+                          pl={4}
+                          pr={4}
+                          pt={1}
+                          pb={1}>
                           {tagName}
                         </Box>
                       </Link>
