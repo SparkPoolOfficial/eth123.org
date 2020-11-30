@@ -31,7 +31,7 @@ const NavItem = ({
 
   const size = 30;
 
-  const website = language === 'zh' ? url : url_en;
+  const website = language === 'zh' ? url : (url_en || url);
 
   // render item desc
   const renderDesc = () => {

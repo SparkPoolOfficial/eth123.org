@@ -38,7 +38,6 @@ class NavHotItemCard extends PureComponent {
       )
     }
 
-
     // console.log('NavHotItemCard');
     return (
       <Box mb={2} id={encodeURI((tagList[0] || {}).tag_en)}>
@@ -50,7 +49,7 @@ class NavHotItemCard extends PureComponent {
                 <Grid item xs={6} sm={4} md={3} key={`Hot-${index}`}>
                   <Link
                     color="textPrimary"
-                    href={`${language === 'zh' ? item.url : item.url_en}?utm_resource=eth123.org`}
+                    href={`${language === 'zh' ? item.url : (item.url_en || item.url)}?utm_resource=eth123.org`}
                     target="_blank"
                     underline='none'
                     onClick={() => {
