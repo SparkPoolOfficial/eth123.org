@@ -1,32 +1,29 @@
 import React from 'react';
-import {
-  Box,
-  Grid,
-} from '@material-ui/core';
+import { Grid } from '@material-ui/core';
 import { Skeleton } from '@material-ui/lab';
 
 import ItemSkeleton from './ItemSkeleton';
+
+import Box from '../Box';
+import BoxStyles from '../Box.module.css';
+
 import { getSkeletonList } from '../../services';
 
 const CardSkeleton = () => (getSkeletonList() || []).map((key) => (
   <Box
-    bgcolor="white"
-    borderRadius={16}
     mb={2}
+    backgroundColor="white"
+    borderRadius={16}
     key={`${key}-index`}
-    px={{ xs: 2, sm: 2, md: 3 }}
-  >
+    className={BoxStyles.cardSkeleton}>
     <Box
-      py={2}
-      border={1}
-      borderTop={0}
-      borderRight={0}
-      borderLeft={0}
-      borderColor="grey.100"
+      pt={2}
+      pb={2}
+      borderBottom="1px solid #f5f5f5"
     >
       <Skeleton variant="text" width={100} />
     </Box>
-    <Box py={{ xs: 2, sm: 2, md: 3 }}>
+    <Box className={BoxStyles.cardSkeleton_card}>
       <Grid container spacing={2}>
         <ItemSkeleton />
       </Grid>

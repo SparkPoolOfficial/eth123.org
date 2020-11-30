@@ -2,7 +2,7 @@ import React from 'react';
 import {
   CssBaseline,
   Container,
-  Box,
+  // Box,
   Typography,
   Button,
   Hidden,
@@ -18,12 +18,14 @@ import NavHotItemCard from './components/NavHotItemCard';
 import NavItemCard from './components/NavItemCard';
 import Logo from './components/Logo';
 import Footer from './components/Footer';
+import Box from './components/Box';
 
 import { jsonHost } from './services/config';
 import { get } from './services/fetch';
 import { getDefaultLanguage } from './services';
 
 import './App.css';
+import BoxStyles from './components/Box.module.css';
 
 const theme = createMuiTheme({
   palette: {
@@ -114,7 +116,7 @@ class App extends React.Component {
             flexDirection="row"
             justifyContent="space-between"
             alignItems="center"
-            mt={{ xs: 1, sm: 2 }}>
+            className={BoxStyles.header}>
             <Hidden lgUp>
               <Box
                 style={{ cursor: 'pointer' }}
@@ -149,8 +151,8 @@ class App extends React.Component {
             display="flex"
             flexDirection="column"
             alignItems="center"
-            mb={{ xs: 2, sm: 3, md: 4 }}>
-            <Box mb={{ xs: .5, sm: 1 }}>
+            className={BoxStyles.header_title}>
+            <Box className={BoxStyles.header_logo}>
               <Logo />
             </Box>
             <Box>
@@ -174,6 +176,7 @@ class App extends React.Component {
               <NavHotItemCard
                 navList={navList}
                 tagList={tagList}
+                language={language}
               />
               <NavItemCard
                 navList={navList}
