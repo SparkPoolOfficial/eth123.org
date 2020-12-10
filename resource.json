@@ -480,15 +480,15 @@
       "image":""
    },
    {
-      "name":"Alethio",
+      "name":"Ethstats",
       "name_en":"",
       "desc":"",
       "desc_en":"",
-      "url":"https://aleth.io/",
+      "url":"https://ethstats.net/",
       "url_en":"",
       "tag":"浏览器",
       "tag_en":"Explorer",
-      "logo":"/imgs/Data%20Analysis/Alethio.jpg",
+      "logo":"",
       "image":""
    },
    {
@@ -1197,6 +1197,18 @@
       "tag":"保险",
       "tag_en":"Insurance",
       "logo":"/imgs/opyn.co_logo_400x400-1588140851764.png",
+      "image":""
+   },
+   {
+      "name":"Cover Protocol",
+      "name_en":"",
+      "desc":"",
+      "desc_en":"",
+      "url":"https://www.coverprotocol.com/",
+      "url_en":"",
+      "tag":"保险",
+      "tag_en":"Insurance",
+      "logo":"/imgs/Defi/cover.webp",
       "image":""
    },
    {
@@ -2133,6 +2145,18 @@
       "tag":"工具",
       "tag_en":"Tool",
       "logo":"/imgs/tool/txstreet.png",
+      "image":""
+   },
+   {
+      "name":"Fees.wtf",
+      "name_en":"",
+      "desc":"看看你花了多少手续费。",
+      "desc_en":"",
+      "url":"https://fees.wtf/",
+      "url_en":"",
+      "tag":"工具",
+      "tag_en":"Tool",
+      "logo":"/imgs/tool/feeswtf.png",
       "image":""
    },
    {
