@@ -78,10 +78,10 @@ class App extends React.Component {
 
   fetchNavList = async () => {
     // const res = await get('/resource.json');
-    let startTime = new Date().getTime();
+    // let startTime = new Date().getTime();
     const res = await get(`${jsonHost}/main/resource.json`);
     if (res && (res || []).length) {
-      console.log('fetch resource times:', new Date().getTime() - startTime);
+      // console.log('fetch resource times:', new Date().getTime() - startTime);
       this.setState({
         navList: res,
         footerVisible: true,

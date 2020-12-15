@@ -7,27 +7,43 @@ const Box = ({
   ...props
 }) => {
 
-  const keys = {
+  const spacingKeys = {
     m: 'margin',
     mt: 'marginTop',
     mr: 'marginRight',
     mb: 'marginBottom',
     ml: 'marginLeft',
+    mx: ['ml', 'mr'],
+    my: ['mt', 'mb'],
 
     p: 'padding',
     pt: 'paddingTop',
     pr: 'paddingRight',
     pb: 'paddingBottom',
     pl: 'paddingLeft',
+    px: ['pl', 'pr'],
+    py: ['pt', 'pb'],
   }
 
   const styleProps = [
+    "position",
     "display",
     "flex",
+    "flexWrap",
     "flexDirection",
     "justifyContent",
     "alignItems",
+
+    "width",
+    "height",
+    "fontWeight",
+    "fontSize",
+    "lineHeight",
+    "textAlign",
+
+    "color",
     "backgroundColor",
+
     "border",
     "borderTop",
     "borderRight",
@@ -35,14 +51,24 @@ const Box = ({
     "borderLeft",
     "borderColor",
     "borderRadius",
-    "fontWeight",
+    "boxShadow",
+
+    "wordBreak",
+    "cursor",
+    "userSelect",
   ];
 
   let spacingStyle = {};
   try {
-    Object.keys(keys).forEach((key) => {
-      if (props[key]) {
-        spacingStyle[keys[key]] = props[key] * 8;
+    Object.keys(props).forEach((prop) => {
+      if (spacingKeys[prop]) {
+        if (/(x|y)/.test(prop)) {
+          spacingKeys[prop].forEach((key) => {
+            spacingStyle[spacingKeys[key]] = props[prop] * 8;
+          })
+        } else {
+          spacingStyle[spacingKeys[prop]] = props[prop] * 8;
+        }
       }
     });
   } catch (e) {

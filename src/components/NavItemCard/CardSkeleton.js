@@ -17,10 +17,8 @@ const CardSkeleton = () => (getSkeletonList() || []).map((key) => (
     key={`${key}-index`}
     className={BoxStyles.cardSkeleton}>
     <Box
-      pt={2}
-      pb={2}
-      borderBottom="1px solid #f5f5f5"
-    >
+      py={2}
+      borderBottom="1px solid #f5f5f5">
       <Skeleton variant="text" width={100} />
     </Box>
     <Box className={BoxStyles.cardSkeleton_card}>

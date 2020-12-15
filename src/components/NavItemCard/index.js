@@ -30,8 +30,7 @@ class NavItemCard extends PureComponent {
         className={BoxStyles.navItemCard}
       >
         <Box
-          pt={2}
-          pb={2}
+          py={2}
           borderBottom="1px solid #f5f5f5"
         >
           <Typography>

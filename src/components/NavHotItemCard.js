@@ -62,8 +62,7 @@ class NavHotItemCard extends PureComponent {
                       flexDirection="column"
                       justifyContent="center"
                       alignItems="center"
-                      pt={2}
-                      pb={2}
+                      py={2}
                       borderRadius={8}
                       backgroundColor="#fff"
                       className="hotCard">

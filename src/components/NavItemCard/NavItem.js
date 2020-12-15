@@ -63,7 +63,7 @@ const NavItem = ({
         <Box
           display="flex"
           flexDirection="row"
-          classnames={classnames("cardItem", BoxStyles.cardItem)}
+          className={classnames("cardItem", BoxStyles.cardItem)}
           borderRadius={8}>
           <Box mr={1}>
             <LazyLoad
