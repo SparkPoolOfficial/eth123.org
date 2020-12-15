@@ -92,6 +92,10 @@
       "tag_en":"Eth2 Resources"
    },
    {
+      "tag":"Eth2 质押服务",
+      "tag_en":"Eth2 Staking Providers"
+   },
+   {
       "tag":"开发者",
       "tag_en":"Developer Resources"
    },
@@ -102,10 +106,6 @@
    {
       "tag":"基础设施",
       "tag_en":"Infrastructure"
-   },
-   {
-      "tag":"推特",
-      "tag_en":"Twitter"
    },
    {
       "tag":"博客",
