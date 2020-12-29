@@ -11,7 +11,7 @@ class NavItemList extends PureComponent {
     if (!(navList || []).length) {
       return <ItemSkeleton />
     }
-    const list = (navList || []).filter((item) => item.tag_en.indexOf(tag) > -1);
+    const list = (navList || []).filter((item) => item.tag_en === tag);
     let node = [];
     let len = list.length <= 8 ? 8 : 7;
     node = list.slice(0, len).map((item, index) => (
