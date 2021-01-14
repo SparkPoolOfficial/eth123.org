@@ -27,6 +27,10 @@ const Box = ({
 
   const styleProps = [
     "position",
+    "top",
+    "right",
+    "bottom",
+    "left",
     "display",
     "flex",
     "flexWrap",
@@ -36,6 +40,7 @@ const Box = ({
 
     "width",
     "height",
+    "minHeight",
     "fontWeight",
     "fontSize",
     "lineHeight",
@@ -56,6 +61,7 @@ const Box = ({
     "wordBreak",
     "cursor",
     "userSelect",
+    "zIndex",
   ];
 
   let spacingStyle = {};

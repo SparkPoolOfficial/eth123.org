@@ -17,6 +17,7 @@ import NavBar from './components/NavBar';
 import NavHotItemCard from './components/NavHotItemCard';
 import NavItemCard from './components/NavItemCard';
 import Logo from './components/Logo';
+import Header from './components/Header';
 import Footer from './components/Footer';
 import Box from './components/Box';
 
@@ -110,8 +111,15 @@ class App extends React.Component {
     return (
       <ThemeProvider theme={theme}>
         <CssBaseline />
+        <Header
+          tagList={tagList}
+          language={language}
+          onChangeLanguage={(language) => {
+            this.setState({ language });
+          }}
+        />
         <Container>
-          <Box
+          {/* <Box
             display="flex"
             flexDirection="row"
             justifyContent="space-between"
@@ -128,39 +136,7 @@ class App extends React.Component {
                 <Menu />
               </Box>
             </Hidden>
-            <Box flex="1" />
-            <Button
-              disableElevation={true}
-              variant="outlined"
-              onClick={() => {
-                const lng = language === 'zh' ? 'en' : 'zh';
-                window.localStorage.setItem('i18nextLng', lng);
-                document.cookie = `i18next=${lng};path=/;domain=.eth123.org`;
-                this.setState({ language: lng });
-              }}
-              size="small"
-              startIcon={<Language />}
-              className="languageBtn"
-              style={{ textTransform: 'none' }}>
-              <Box fontWeight="400" className="languageBtn_text">
-                {language === "zh" ? 'English' : '中文'}
-              </Box>
-            </Button>
-          </Box>
-          <Box
-            display="flex"
-            flexDirection="column"
-            alignItems="center"
-            className={BoxStyles.header_title}>
-            <Box className={BoxStyles.header_logo}>
-              <Logo />
-            </Box>
-            <Box>
-              <Typography color="textSecondary">
-                -- {t('subTitle')} --
-              </Typography>
-            </Box>
-          </Box>
+          </Box> */}
           <Box display="flex" flexDirection="row">
             <NavBar
               tagList={tagList}
