@@ -94,6 +94,24 @@ const Header = ({
               display="flex"
               flexDirection="row">
               <a
+                href={BTC123URL}
+                target="_blank"
+                rel="noreferrer"
+                style={{ textDecoration: 'none' }}>
+                <Box
+                  mr={4.5}
+                  pr={4.5}
+                  borderRight="1px solid rgba(0, 0, 0, .1)">
+                  <BTCLOGO />
+                  <Box
+                    mt={.5}
+                    fontSize={14}
+                    color="#999">
+                    {t('btcTitle')}
+                  </Box>
+                </Box>
+              </a>
+              <a
                 href="/"
                 style={{ textDecoration: 'none' }}>
                 <Box position="relative">
@@ -113,24 +131,6 @@ const Header = ({
                     borderRadius={2}
                     backgroundColor="#FF7828"
                   />
-                </Box>
-              </a>
-              <a
-                href={BTC123URL}
-                target="_blank"
-                rel="noreferrer"
-                style={{ textDecoration: 'none' }}>
-                <Box
-                  ml={4.5}
-                  pl={4.5}
-                  borderLeft="1px solid rgba(0, 0, 0, .1)">
-                  <BTCLOGO />
-                  <Box
-                    mt={.5}
-                    fontSize={14}
-                    color="#999">
-                    {t('btcTitle')}
-                  </Box>
                 </Box>
               </a>
             </Box>
