@@ -61,8 +61,7 @@ const Header = ({
         onClick={() => {
           const lng = language === 'zh' ? 'en' : 'zh';
           window.localStorage.setItem('i18nextLng', lng);
-          document.cookie = `i18next=${lng};path=/;domain=.eth123.org`;
-          document.cookie = `i18next=${lng};path=/;domain=.123btc.org`;
+          document.cookie = `i18next=${lng};path=/;domain=.123eth.org`;
           onChangeLanguage(lng);
         }}
         size="small"

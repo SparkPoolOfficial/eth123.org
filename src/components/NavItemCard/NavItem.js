@@ -54,7 +54,7 @@ const NavItem = ({
     <Grid item xs={6} sm={4} md={3}>
       <Link
         color="textPrimary"
-        href={`${website}?utm_resource=eth123.org`}
+        href={`${website}?utm_resource=123eth.org`}
         target="_blank"
         underline='none'
         onClick={() => {
