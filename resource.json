@@ -1668,6 +1668,18 @@
       "image":""
    },
    {
+      "name":"Scout",
+      "name_en":"",
+      "desc":"",
+      "desc_en":"",
+      "url":"https://scout.cool/",
+      "url_en":"",
+      "tag":"数据分析",
+      "tag_en":"Data Analysis",
+      "logo":"",
+      "image":""
+   },
+   {
       "name":"Ethdashboard",
       "name_en":"",
       "desc":"",
@@ -2952,6 +2964,18 @@
       "image":""
    },
    {
+      "name":"EIP",
+      "name_en":"",
+      "desc":"",
+      "desc_en":"",
+      "url":"https://eips.ethereum.org/",
+      "url_en":"",
+      "tag":"开发者",
+      "tag_en":"Developer Resources",
+      "logo":"/img-btc/developer/github.png",
+      "image":""
+   },
+   {
       "name":"OpenZeppelin",
       "name_en":"",
       "desc":"",
@@ -3000,6 +3024,30 @@
       "image":""
    },
    {
+      "name":"Waffle ",
+      "name_en":"",
+      "desc":"",
+      "desc_en":"",
+      "url":"https://getwaffle.io/",
+      "url_en":"",
+      "tag":"开发者",
+      "tag_en":"Developer Resources",
+      "logo":"",
+      "image":""
+   },
+   {
+      "name":"dapp.tools",
+      "name_en":"",
+      "desc":"",
+      "desc_en":"",
+      "url":"https://dapp.tools/",
+      "url_en":"",
+      "tag":"开发者",
+      "tag_en":"Developer Resources",
+      "logo":"",
+      "image":""
+   },
+   {
       "name":"Hardhat",
       "name_en":"",
       "desc":"",
@@ -3009,6 +3057,18 @@
       "tag":"开发者",
       "tag_en":"Developer Resources",
       "logo":"/imgs/Developer%20Resources/hardhat.jpg",
+      "image":""
+   },
+   {
+      "name":"Cobra",
+      "name_en":"",
+      "desc":"",
+      "desc_en":"",
+      "url":"https://github.com/cobraframework/cobra",
+      "url_en":"",
+      "tag":"开发者",
+      "tag_en":"Developer Resources",
+      "logo":"/img-btc/developer/github.png",
       "image":""
    },
    {
@@ -3048,6 +3108,18 @@
       "image":""
    },
    {
+      "name":"sbt-ethereum",
+      "name_en":"",
+      "desc":"",
+      "desc_en":"",
+      "url":"https://www.sbt-ethereum.io/",
+      "url_en":"",
+      "tag":"开发者",
+      "tag_en":"Developer Resources",
+      "logo":"",
+      "image":""
+   },
+   {
       "name":"Tenderly",
       "name_en":"",
       "desc":"",
@@ -3072,23 +3144,35 @@
       "image":""
    },
    {
-      "name":"MythX",
+      "name":"Nethereum",
       "name_en":"",
       "desc":"",
       "desc_en":"",
-      "url":"https://mythx.io/",
+      "url":"https://nethereum.com/",
       "url_en":"",
       "tag":"开发者",
       "tag_en":"Developer Resources",
-      "logo":"/imgs/Developer%20Resources/mythx.jpg",
+      "logo":"",
       "image":""
    },
    {
-      "name":"EIP",
+      "name":"Piet",
       "name_en":"",
       "desc":"",
       "desc_en":"",
-      "url":"https://eips.ethereum.org/",
+      "url":"https://piet.slock.it/",
+      "url_en":"",
+      "tag":"开发者",
+      "tag_en":"Developer Resources",
+      "logo":"",
+      "image":""
+   },
+   {
+      "name":"Chainstack",
+      "name_en":"",
+      "desc":"",
+      "desc_en":"",
+      "url":"https://chainstack.com/",
       "url_en":"",
       "tag":"开发者",
       "tag_en":"Developer Resources",
@@ -3104,7 +3188,7 @@
       "url_en":"",
       "tag":"开发者",
       "tag_en":"Developer Resources",
-      "logo":"",
+      "logo":"/img-btc/developer/github.png",
       "image":""
    },
    {
@@ -3116,7 +3200,7 @@
       "url_en":"",
       "tag":"开发者",
       "tag_en":"Developer Resources",
-      "logo":"",
+      "logo":"/img-btc/developer/github.png",
       "image":""
    },
    {
@@ -3128,6 +3212,90 @@
       "url_en":"",
       "tag":"开发者",
       "tag_en":"Developer Resources",
+      "logo":"/img-btc/developer/github.png",
+      "image":""
+   },
+   {
+      "name":"Hashex",
+      "name_en":"",
+      "desc":"",
+      "desc_en":"",
+      "url":"https://abi.hashex.org/",
+      "url_en":"",
+      "tag":"开发者",
+      "tag_en":"Developer Resources",
+      "logo":"",
+      "image":""
+   },
+   {
+      "name":"Ropsten",
+      "name_en":"",
+      "desc":"",
+      "desc_en":"",
+      "url":"https://faucet.metamask.io/",
+      "url_en":"",
+      "tag":"水龙头",
+      "tag_en":"Faucets",
+      "logo":"",
+      "image":""
+   },
+   {
+      "name":"Rinkeby",
+      "name_en":"",
+      "desc":"",
+      "desc_en":"",
+      "url":"https://faucet.rinkeby.io/",
+      "url_en":"",
+      "tag":"水龙头",
+      "tag_en":"Faucets",
+      "logo":"",
+      "image":""
+   },
+   {
+      "name":"Kovan",
+      "name_en":"",
+      "desc":"",
+      "desc_en":"",
+      "url":"https://github.com/kovan-testnet/faucet",
+      "url_en":"",
+      "tag":"水龙头",
+      "tag_en":"Faucets",
+      "logo":"",
+      "image":""
+   },
+   {
+      "name":"Goerli",
+      "name_en":"",
+      "desc":"",
+      "desc_en":"",
+      "url":"https://goerli-faucet.slock.it/",
+      "url_en":"",
+      "tag":"水龙头",
+      "tag_en":"Faucets",
+      "logo":"",
+      "image":""
+   },
+   {
+      "name":"Nethereum",
+      "name_en":"",
+      "desc":"",
+      "desc_en":"",
+      "url":"https://github.com/Nethereum/Nethereum.Faucet",
+      "url_en":"",
+      "tag":"水龙头",
+      "tag_en":"Faucets",
+      "logo":"",
+      "image":""
+   },
+   {
+      "name":"通用水龙头",
+      "name_en":"Universal Faucet",
+      "desc":"",
+      "desc_en":"",
+      "url":"https://faucets.blockxlabs.com/",
+      "url_en":"",
+      "tag":"水龙头",
+      "tag_en":"Faucets",
       "logo":"",
       "image":""
    },
@@ -3204,6 +3372,30 @@
       "image":""
    },
    {
+      "name":"MythX",
+      "name_en":"",
+      "desc":"",
+      "desc_en":"",
+      "url":"https://mythx.io/",
+      "url_en":"",
+      "tag":"安全",
+      "tag_en":"Security",
+      "logo":"/imgs/Developer%20Resources/mythx.jpg",
+      "image":""
+   },
+   {
+      "name":"Smart Check",
+      "name_en":"",
+      "desc":"",
+      "desc_en":"",
+      "url":"https://tool.smartdec.net/",
+      "url_en":"",
+      "tag":"安全",
+      "tag_en":"Security",
+      "logo":"",
+      "image":""
+   },
+   {
       "name":"Infura",
       "name_en":"",
       "desc":"",
@@ -3213,6 +3405,18 @@
       "tag":"基础设施",
       "tag_en":"Infrastructure",
       "logo":"/imgs/Developer%20Resources/infura.jpg",
+      "image":""
+   },
+   {
+      "name":"Alchemy",
+      "name_en":"",
+      "desc":"",
+      "desc_en":"",
+      "url":"https://www.alchemyapi.io/",
+      "url_en":"",
+      "tag":"基础设施",
+      "tag_en":"Infrastructure",
+      "logo":"",
       "image":""
    },
    {
