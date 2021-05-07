@@ -1212,30 +1212,6 @@
       "image":""
    },
    {
-      "name":"Cover Protocol",
-      "name_en":"",
-      "desc":"",
-      "desc_en":"",
-      "url":"https://www.coverprotocol.com/",
-      "url_en":"",
-      "tag":"保险",
-      "tag_en":"Insurance",
-      "logo":"/imgs/Defi/cover.webp",
-      "image":""
-   },
-   {
-      "name":"Nsure",
-      "name_en":"",
-      "desc":"",
-      "desc_en":"",
-      "url":"https://nsure.network/",
-      "url_en":"",
-      "tag":"保险",
-      "tag_en":"Insurance",
-      "logo":"/imgs/Defi/nsure.jpeg",
-      "image":""
-   },
-   {
       "name":"USDT",
       "name_en":"",
       "desc":"",
@@ -1905,6 +1881,18 @@
       "tag":"数据分析",
       "tag_en":"Data Analysis",
       "logo":"/imgs/Data%20Analysis/oraclesclub.jpg",
+      "image":""
+   },
+   {
+      "name":"DeFi Watch",
+      "name_en":"",
+      "desc":"",
+      "desc_en":"",
+      "url":"https://defiwatch.net/",
+      "url_en":"",
+      "tag":"数据分析",
+      "tag_en":"Data Analysis",
+      "logo":"",
       "image":""
    },
    {
