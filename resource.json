@@ -1908,6 +1908,18 @@
       "image":""
    },
    {
+      "name":"Footprint",
+      "name_en":"",
+      "desc":"",
+      "desc_en":"Footprint is a powerful yet easy-to-use analytics tool to uncover and visualize blockchain data",
+      "url":"https://www.footprint.network/",
+      "url_en":"",
+      "tag":"数据分析",
+      "tag_en":"Data Analysis",
+      "logo":"/imgs/Data%20Analysis/footprint.png",
+      "image":""
+   },
+   {
       "name":"zkSync",
       "name_en":"",
       "desc":"",
@@ -2268,6 +2280,18 @@
       "image":""
    },
    {
+      "name":"Nethermind",
+      "name_en":"",
+      "desc":"",
+      "desc_en":"",
+      "url":"http://nethermind.io/",
+      "url_en":"",
+      "tag":"ETH1 客户端",
+      "tag_en":"ETH1 Client",
+      "logo":"/imgs/Client/nethermind.png",
+      "image":""
+   },
+   {
       "name":"Prysm",
       "name_en":"",
       "desc":"",
@@ -2301,18 +2325,6 @@
       "tag":"ETH2 客户端",
       "tag_en":"ETH2 Client",
       "logo":"/imgs/Client/teku.jpg",
-      "image":""
-   },
-   {
-      "name":"Nethermind",
-      "name_en":"",
-      "desc":"",
-      "desc_en":"",
-      "url":"http://nethermind.io/",
-      "url_en":"",
-      "tag":"ETH2 客户端",
-      "tag_en":"ETH2 Client",
-      "logo":"/imgs/Client/nethermind.png",
       "image":""
    },
    {
@@ -3012,7 +3024,7 @@
       "image":""
    },
    {
-      "name":"Waffle ",
+      "name":"Waffle ",
       "name_en":"",
       "desc":"",
       "desc_en":"",
@@ -3924,6 +3936,30 @@
       "image":""
    },
    {
+      "name":"OpenSea",
+      "name_en":"",
+      "desc":"",
+      "desc_en":"",
+      "url":"https://opensea.io/",
+      "url_en":"",
+      "tag":"NFT",
+      "tag_en":"NFT",
+      "logo":"/imgs/others/Opensea.jpg",
+      "image":""
+   },
+   {
+      "name":"Rarible",
+      "name_en":"",
+      "desc":"",
+      "desc_en":"",
+      "url":"https://rarible.com/",
+      "url_en":"",
+      "tag":"NFT",
+      "tag_en":"NFT",
+      "logo":"/imgs/others/Rarible.jpeg",
+      "image":""
+   },
+   {
       "name":"加密猫",
       "name_en":"CryptoKitties",
       "desc":"",
@@ -3996,18 +4032,6 @@
       "image":""
    },
    {
-      "name":"OpenSea",
-      "name_en":"",
-      "desc":"",
-      "desc_en":"",
-      "url":"https://opensea.io/",
-      "url_en":"",
-      "tag":"NFT",
-      "tag_en":"NFT",
-      "logo":"/imgs/others/Opensea.jpg",
-      "image":""
-   },
-   {
       "name":"Mintbase",
       "name_en":"",
       "desc":"",
@@ -4017,6 +4041,30 @@
       "tag":"NFT",
       "tag_en":"NFT",
       "logo":"/imgs/NFT/Mintbase.jpg",
+      "image":""
+   },
+   {
+      "name":"NFTSCAN",
+      "name_en":"",
+      "desc":"NFTSCAN 是一个专业的 NFT 资产浏览器和数据分析平台",
+      "desc_en":"NFTSCAN is a professional NFT asset browser and data analysis platform",
+      "url":"https://nftscan.com/",
+      "url_en":"",
+      "tag":"NFT",
+      "tag_en":"NFT",
+      "logo":"/imgs/NFT/nftscan.jpg",
+      "image":""
+   },
+   {
+      "name":"NFTPriceFloor",
+      "name_en":"",
+      "desc":"",
+      "desc_en":"The go-to place to check NFT prices and curated data",
+      "url":"https://nftpricefloor.com/",
+      "url_en":"",
+      "tag":"NFT",
+      "tag_en":"NFT",
+      "logo":"",
       "image":""
    },
    {
@@ -4053,18 +4101,6 @@
       "tag":"NFT",
       "tag_en":"NFT",
       "logo":"/imgs/NFT/Nifty%20Gateway.jpg",
-      "image":""
-   },
-   {
-      "name":"Rarible",
-      "name_en":"",
-      "desc":"",
-      "desc_en":"",
-      "url":"https://rarible.com/",
-      "url_en":"",
-      "tag":"NFT",
-      "tag_en":"NFT",
-      "logo":"/imgs/others/Rarible.jpeg",
       "image":""
    },
    {
@@ -4116,7 +4152,7 @@
       "image":""
    },
    {
-      "name":"Blockparty ",
+      "name":"Blockparty ",
       "name_en":"",
       "desc":"",
       "desc_en":"",
