@@ -38,13 +38,13 @@ class Footer extends PureComponent {
             color="primary"
             style={{ textTransform: 'none' }}
             onClick={() => {
-              window.open('https://github.com/SparkPoolOfficial/eth123.org/issues');
+              window.open('https://forms.gle/qAWrAKwC5WSJzsEw7');
             }}
             >
             {t('submit')}
           </Button>
         </Box>
-        <Box
+        {/* <Box
           display="flex"
           flexDirection="row"
           justifyContent="center"
@@ -55,7 +55,7 @@ class Footer extends PureComponent {
               SparkPool
             </Link>
           </div>
-        </Box>
+        </Box> */}
       </>
     )
 
