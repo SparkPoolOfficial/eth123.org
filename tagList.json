@@ -20,14 +20,6 @@
       "tag_en":"Information"
    },
    {
-      "tag":"行情",
-      "tag_en":"Price"
-   },
-   {
-      "tag":"交易所",
-      "tag_en":"Exchange"
-   },
-   {
       "tag":"去中心化交易所",
       "tag_en":"DEX"
    },
@@ -38,10 +30,6 @@
    {
       "tag":"衍生品",
       "tag_en":"Derivatives"
-   },
-   {
-      "tag":"保险",
-      "tag_en":"Insurance"
    },
    {
       "tag":"稳定币",
@@ -142,10 +130,6 @@
    {
       "tag":"其它应用",
       "tag_en":"Other dApps"
-   },
-   {
-      "tag":"投资机构",
-      "tag_en":"Captial/Tokenfund"
    },
    {
       "tag":"其它",
