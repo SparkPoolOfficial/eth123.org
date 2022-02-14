@@ -6,8 +6,8 @@
 
 ### 配置图片资源
 
-上传目录: /public/static/img-btc/
+上传目录: /public/static/imgs/
 
 resource.json 配置 images 字段格式:
 
-images: "/img-btc/xxx/xxx.jpg"
+images: "/imgs/xxx/xxx.jpg"
