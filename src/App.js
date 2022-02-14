@@ -3,30 +3,30 @@ import {
   CssBaseline,
   Container,
   // Box,
-  Typography,
-  Button,
+  // Typography,
+  // Button,
   Hidden,
 } from '@material-ui/core';
 import {
   createMuiTheme,
   ThemeProvider,
 } from '@material-ui/core/styles';
-import { Language, Menu } from '@material-ui/icons';
+// import { Language, Menu } from '@material-ui/icons';
 
 import NavBar from './components/NavBar';
 import NavHotItemCard from './components/NavHotItemCard';
 import NavItemCard from './components/NavItemCard';
-import Logo from './components/Logo';
+// import Logo from './components/Logo';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Box from './components/Box';
 
-import { jsonHost } from './services/config';
+// import { jsonHost } from './services/config';
 import { get } from './services/fetch';
 import { getDefaultLanguage } from './services';
 
 import './App.css';
-import BoxStyles from './components/Box.module.css';
+// import BoxStyles from './components/Box.module.css';
 
 const theme = createMuiTheme({
   palette: {
@@ -68,8 +68,8 @@ class App extends React.Component {
   }
 
   fetchTagList = async (navList) => {
-    // const res = await get('/tagList.json');
-    const res = await get(`${jsonHost}/main/tagList.json`);
+    const res = await get('/tagList.json');
+    // const res = await get(`${jsonHost}/main/tagList.json`);
     if (res && (res || []).length) {
       this.setState({
         tagList: res,
@@ -78,9 +78,9 @@ class App extends React.Component {
   }
 
   fetchNavList = async () => {
-    // const res = await get('/resource.json');
+    const res = await get('/resource.json');
     // let startTime = new Date().getTime();
-    const res = await get(`${jsonHost}/main/resource.json`);
+    // const res = await get(`${jsonHost}/main/resource.json`);
     if (res && (res || []).length) {
       // console.log('fetch resource times:', new Date().getTime() - startTime);
       this.setState({
@@ -166,6 +166,7 @@ class App extends React.Component {
           </Box>
         </Container>
         <Footer
+          language={language}
           footerVisible={footerVisible}
           t={t}
         />

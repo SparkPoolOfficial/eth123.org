@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="72px" height="72px" viewBox="0 0 72 72" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 61.2 (89653) - https://sketch.com -->
+    <title>eth</title>
+    <desc>Created with Sketch.</desc>
+    <g id="页面-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="2020星火红包送不停" transform="translate(-71.000000, -1055.000000)">
+            <g id="编组-2" transform="translate(35.000000, 1031.000000)">
+                <g id="编组">
+                    <g id="eth" transform="translate(36.000000, 24.000000)">
+                        <circle id="user" stroke-opacity="0.3" stroke="#ABABAB" stroke-width="1.28571429" fill="#FFFFFF" fill-rule="nonzero" cx="36" cy="36" r="35.3571429"></circle>
+                        <polygon id="Path" fill="#3C3C3B" points="35.6795329 47.3630552 35.4956897 47.5885866 35.4956897 59.1234576 35.6795329 59.6637931 50.625 38.4827586"></polygon>
+                        <polygon id="Path" fill="#8C8C8C" points="36.5043103 59.6637931 36.5043103 47.363006 21.375 38.4827586"></polygon>
+                        <polygon id="Path" fill="#343434" points="35.8190867 11.25 35.4956897 12.3480858 35.4956897 44.2119923 35.8190867 44.5344828 50.625 35.7916393"></polygon>
+                        <polygon id="Path" fill="#8C8C8C" points="36.5043103 11.25 21.375 35.7915541 36.5043103 44.5344828 36.5043103 29.0687495"></polygon>
+                        <polygon id="Path" fill="#141414" points="35.4956897 45.5431034 50.625 36.4202797 35.4956897 29.4051724"></polygon>
+                        <polygon id="Path" fill="#393939" points="21.375 36.4202273 36.5043103 45.5431034 36.5043103 29.4051724"></polygon>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

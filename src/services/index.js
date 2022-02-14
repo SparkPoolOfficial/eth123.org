@@ -23,8 +23,9 @@ export const trackEvent = (tag, name) => {
 }
 
 export const formatWebpImageSrc = (src = '') => {
-  if (!src) return '';
-  if (src.indexOf('http') > -1) return src;
-  if (/\S+\.svg$/.test(src)) return `${imgHost}${src}`;
-  return `${imgHost}${src}!webp`;
+  return `${imgHost}${src}`;
+  // if (!src) return '';
+  // if (src.indexOf('http') > -1) return src;
+  // if (/\S+\.svg$/.test(src)) return `${imgHost}${src}`;
+  // return `${imgHost}${src}!webp`;
 }
