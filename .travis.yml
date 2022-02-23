@@ -1,0 +1,18 @@
+language: node_js
+node_js:
+  - 14 # use nodejs v14 LTS
+os: linux
+cache: yarn
+branches:
+  only:
+    - master # build master branch only
+script:
+  - yarn build # generate static files
+deploy:
+  provider: pages
+  token: $GH_TOKEN
+  skip_cleanup: true
+  keep_history: true
+  on:
+    branch: master
+  local_dir: public
