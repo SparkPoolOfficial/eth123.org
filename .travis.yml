@@ -15,4 +15,4 @@ deploy:
   keep_history: true
   on:
     branch: main
-  local_dir: public
+  local_dir: build
