@@ -5,7 +5,7 @@ os: linux
 cache: yarn
 branches:
   only:
-    - master # build master branch only
+    - main # build master branch only
 script:
   - yarn build # generate static files
 deploy:
@@ -14,5 +14,5 @@ deploy:
   skip_cleanup: true
   keep_history: true
   on:
-    branch: master
+    branch: main
   local_dir: public
