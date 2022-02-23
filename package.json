@@ -24,6 +24,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build && rm -rf ./docs && mv ./build ./docs",
     "test": "react-scripts test",
+    "publish": "npm run build && git add -A && git commit -m 'script publish' && git push",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
