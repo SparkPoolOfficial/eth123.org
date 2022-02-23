@@ -10,7 +10,7 @@ branches:
   only:
     - main # build master branch only
 script:
-  - npm build
+  - npm run build
 deploy:
   provider: pages
   token: $GH_TOKEN
