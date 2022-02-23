@@ -3,14 +3,14 @@ node_js:
   - 14 # use nodejs v14 LTS
 os: linux
 cache:
-  yarn: true
+  # yarn: false
   directories:
     - node_modules
 branches:
   only:
     - main # build master branch only
 script:
-  - yarn build
+  - npm build
 deploy:
   provider: pages
   token: $GH_TOKEN
@@ -18,4 +18,4 @@ deploy:
   keep_history: true
   on:
     branch: main
-  local_dir: docs
+  local_dir: build
